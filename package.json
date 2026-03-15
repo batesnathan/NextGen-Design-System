@@ -1,0 +1,37 @@
+{
+  "name": "nextgen-design-system",
+  "version": "0.1.0",
+  "private": false,
+  "description": "AI-first design system with primitives, semantic tokens, and TSX components.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/tokens/source",
+    "src/tokens/generated",
+    "docs"
+  ],
+  "scripts": {
+    "sync:tokens": "node ./scripts/sync-figma-tokens.mjs",
+    "build:tokens": "node ./scripts/build-tokens.mjs",
+    "build": "npm run build:tokens && tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "design-system",
+    "tokens",
+    "ai",
+    "tsx",
+    "vibe-coding"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.12",
+    "typescript": "^5.8.2"
+  }
+}
