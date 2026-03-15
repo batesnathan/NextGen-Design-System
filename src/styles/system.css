@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 :root {
   --ng-border-radius-sm: 8px;
   --ng-border-radius-md: 12px;
@@ -173,10 +175,12 @@
   --ng-line-height-body-2: 20px;
   --ng-font-size-title-3: 20px;
   --ng-line-height-title-3: 24px;
+  --ng-font-family-default: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 .ng-reset {
   box-sizing: border-box;
+  font-family: var(--ng-font-family-default);
 }
 
 .ng-surface {
@@ -232,9 +236,11 @@
   border-radius: 999px;
   cursor: pointer;
   display: inline-flex;
-  font-weight: 600;
+  font-style: normal;
+  font-weight: 700;
   gap: var(--ng-space-2);
   justify-content: center;
+  letter-spacing: 0;
   transition: transform 120ms ease, filter 120ms ease, opacity 120ms ease;
   font-family: inherit;
   white-space: nowrap;
@@ -1204,6 +1210,8 @@
 }
 
 .ng-text-button__label {
+  font-family: inherit;
+  font-style: normal;
   text-align: center;
 }
 
