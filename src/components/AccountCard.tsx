@@ -1,5 +1,10 @@
 import type { HTMLAttributes } from "react";
 
+const figmaRocketIcon = "http://localhost:3845/assets/3395e07a0c5ee58815b1655366ae54ef6c70797a.svg";
+const figmaRocketVectorA = "http://localhost:3845/assets/f5df86ba0d8adb047e9abfe45416665c2d22e3e1.svg";
+const figmaRocketVectorB = "http://localhost:3845/assets/6cd2865441dec1ad28c1bf58ffb64912020c033c.svg";
+const figmaRocketVectorC = "http://localhost:3845/assets/9203761bbab3d4ac5df65a49d4604e12d764c48f.svg";
+
 type AccountCardSize = "large" | "small";
 type AccountCardVariant =
   | "hsa"
@@ -23,7 +28,9 @@ type AccountCardSpec = {
   helperBottomLeft?: string;
   helperBottomRight?: string;
   showTrendUp?: boolean;
+  showTrendDown?: boolean;
   showRocket?: boolean;
+  showRefresh?: boolean;
 };
 
 export type AccountCardProps = HTMLAttributes<HTMLElement> & {
@@ -49,6 +56,7 @@ const ACCOUNT_CARD_SPECS: Record<AccountCardVariant, AccountCardSpec> = {
     badgeLabel: "LP FSA",
     subtitleLeft: "Current Balance",
     amountLeft: "$1,850.00",
+    showRefresh: true,
     helperTopLeft: "Use from",
     helperBottomLeft: "Jan 1, 2026 - Dec 31, 2026"
   },
@@ -113,11 +121,39 @@ const ACCOUNT_CARD_SPECS: Record<AccountCardVariant, AccountCardSpec> = {
 };
 
 function TrendUpIcon() {
-  return <span className="ng-account-card__trend ng-account-card__trend--up" aria-hidden="true" />;
+  return <span className="ng-account-card__trend ng-account-card__trend--up" aria-hidden="true">↑</span>;
+}
+
+function TrendDownIcon() {
+  return <span className="ng-account-card__trend ng-account-card__trend--down" aria-hidden="true">↓</span>;
+}
+
+function RefreshIcon() {
+  return (
+    <span className="ng-account-card__refresh" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 12a8 8 0 0 1-13.66 5.66" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        <path d="M4 12a8 8 0 0 1 13.66-5.66" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        <path d="M5.2 18.6v-3.7h3.7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M18.8 5.4v3.7h-3.7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </span>
+  );
 }
 
 function RocketIcon() {
-  return <span className="ng-account-card__rocket" aria-hidden="true" />;
+  return (
+    <span className="ng-account-card__rocket" aria-hidden="true">
+      <img src={figmaRocketIcon} alt="" className="ng-account-card__rocket-base" />
+      <img src={figmaRocketVectorA} alt="" className="ng-account-card__rocket-vector ng-account-card__rocket-vector--a" />
+      <img src={figmaRocketVectorB} alt="" className="ng-account-card__rocket-vector ng-account-card__rocket-vector--b" />
+      <img src={figmaRocketVectorC} alt="" className="ng-account-card__rocket-vector ng-account-card__rocket-vector--c" />
+    </span>
+  );
+}
+
+function AccountTypeBadge({ label }: { label: string }) {
+  return <span className="ng-account-card__badge">{label}</span>;
 }
 
 export function AccountCard({ size = "large", variant = "hsa", className = "", ...props }: AccountCardProps) {
@@ -127,7 +163,7 @@ export function AccountCard({ size = "large", variant = "hsa", className = "", .
     <article className={`ng-reset ng-account-card ng-account-card--${size} ${className}`.trim()} {...props}>
       <header className="ng-account-card__header">
         <p className="ng-account-card__title">{spec.title}</p>
-        <span className="ng-account-card__badge">{spec.badgeLabel}</span>
+        <AccountTypeBadge label={spec.badgeLabel} />
       </header>
 
       <section className="ng-account-card__section ng-account-card__section--summary">
@@ -139,7 +175,7 @@ export function AccountCard({ size = "large", variant = "hsa", className = "", .
         <div className="ng-account-card__row ng-account-card__row--amounts">
           <span className="ng-account-card__amount">{spec.amountLeft}</span>
           {spec.amountRight ? <span className="ng-account-card__amount ng-account-card__amount--secondary">{spec.amountRight}</span> : null}
-          {spec.showTrendUp ? <TrendUpIcon /> : null}
+          {spec.showRefresh ? <RefreshIcon /> : null}
           {spec.showRocket ? <RocketIcon /> : null}
         </div>
       </section>
@@ -158,8 +194,10 @@ export function AccountCard({ size = "large", variant = "hsa", className = "", .
             <span />
           )}
           {spec.helperBottomRight ? (
-            <span className="ng-account-card__foot-value ng-account-card__foot-value--right">
+            <span className="ng-account-card__foot-value ng-account-card__foot-value--right ng-account-card__foot-value--with-icon">
               {spec.helperBottomRight}
+              {spec.showTrendUp ? <TrendUpIcon /> : null}
+              {spec.showTrendDown ? <TrendDownIcon /> : null}
             </span>
           ) : null}
         </div>

@@ -1779,9 +1779,11 @@
   background: var(--ng-color-account-card-bg);
   border-radius: var(--ng-border-radius-lg);
   color: var(--ng-color-account-card-text);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
+  overflow: hidden;
   padding: 10px 12px;
 }
 
@@ -1797,9 +1799,11 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  min-height: 24px;
 }
 
 .ng-account-card__title {
+  color: var(--ng-color-account-card-text);
   font-size: 18px;
   font-weight: 400;
   letter-spacing: -0.54px;
@@ -1811,64 +1815,77 @@
   background: var(--ng-color-account-card-badge-bg);
   border-radius: 3px;
   color: var(--ng-color-account-card-badge-fg);
+  display: inline-flex;
+  font-family: inherit;
   font-size: 11px;
   font-weight: 600;
+  justify-content: center;
   letter-spacing: 0.3px;
   line-height: 16px;
   padding: 2px 5px;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .ng-account-card__section {
   display: grid;
-  gap: 2px;
+  gap: 0;
+}
+
+.ng-account-card__section--summary {
+  margin-top: 2px;
+}
+
+.ng-account-card__section--details {
+  margin-top: 4px;
 }
 
 .ng-account-card__row {
-  align-items: baseline;
+  align-items: flex-end;
   display: flex;
   justify-content: space-between;
+  min-width: 0;
 }
 
 .ng-account-card__meta {
   color: var(--ng-color-account-card-meta);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 400;
   line-height: 16px;
+  white-space: nowrap;
 }
 
 .ng-account-card__amount {
-  font-size: 40px;
+  color: #131313;
+  font-size: 30px;
   font-weight: 700;
   letter-spacing: -1.2px;
   line-height: 36px;
 }
 
 .ng-account-card__amount--secondary {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 700;
-  letter-spacing: -1px;
-  line-height: 36px;
-}
-
-.ng-account-card--small .ng-account-card__amount {
-  font-size: 44px;
+  letter-spacing: -0.96px;
+  line-height: 28px;
+  margin-left: auto;
 }
 
 .ng-account-card__divider {
   border-top: 1px solid var(--ng-color-account-card-divider);
-  margin: 4px 0;
+  margin: 6px 0 0;
 }
 
 .ng-account-card__foot-value {
   color: var(--ng-color-account-card-text);
-  font-size: 24px;
+  font-size: 14px;
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 .ng-account-card__foot-value--right {
+  margin-left: auto;
   text-align: right;
 }
 
@@ -1878,34 +1895,87 @@
   display: inline-flex;
   height: 18px;
   justify-content: center;
-  margin-left: 6px;
+  margin-left: 4px;
   width: 18px;
-}
-
-.ng-account-card__trend--up {
-  background: var(--ng-color-account-card-trend-up-bg);
-  color: var(--ng-color-account-card-trend-up-fg);
-}
-
-.ng-account-card__trend--up::before {
-  content: "↑";
   font-size: 10px;
   font-weight: 700;
   line-height: 1;
 }
 
+.ng-account-card__trend--up {
+  background: var(--ng-color-account-card-trend-up-bg);
+  color: #2e7655;
+}
+
+.ng-account-card__trend--down {
+  background: #e82002;
+  color: #2e0600;
+}
+
+.ng-account-card__refresh {
+  align-items: center;
+  color: #131313;
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
+  margin-left: auto;
+  width: 18px;
+}
+
+.ng-account-card__refresh svg {
+  display: block;
+  height: 18px;
+  width: 18px;
+}
+
 .ng-account-card__rocket {
-  background: currentColor;
-  border-radius: 3px;
   display: inline-block;
-  height: 16px;
-  margin-left: 6px;
-  opacity: 0.85;
-  width: 16px;
+  height: 24px;
+  margin-left: auto;
+  position: relative;
+  width: 24px;
+}
+
+.ng-account-card__rocket-base {
+  display: block;
+  height: 24px;
+  width: 24px;
+}
+
+.ng-account-card__rocket-vector {
+  position: absolute;
+}
+
+.ng-account-card__rocket-vector--a {
+  inset: 16.67%;
+}
+
+.ng-account-card__rocket-vector--b {
+  inset: 58.33% 58.33% 16.46% 16.46%;
+}
+
+.ng-account-card__rocket-vector--c {
+  inset: 33.33% 33.33% 58.33% 58.33%;
 }
 
 .ng-account-card__row--foot {
+  align-items: center;
+}
+
+.ng-account-card__row--amounts {
   align-items: flex-end;
+  min-height: 38px;
+}
+
+.ng-account-card__row--meta {
+  align-items: center;
+  min-height: 16px;
+}
+
+.ng-account-card__foot-value--with-icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: flex-end;
 }
 
 .ng-bottom-nav {
