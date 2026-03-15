@@ -116,7 +116,7 @@ export function BottomNav({ activeItem = "home", onItemSelect, className = "", .
                 <NavIcon item={item.key} active={isActive} />
               )}
             </span>
-            <span className="ng-bottom-nav__label">{item.label}</span>
+            {!isActive ? <span className="ng-bottom-nav__label">{item.label}</span> : null}
           </button>
         );
       })}

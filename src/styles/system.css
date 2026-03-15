@@ -2070,6 +2070,11 @@
   width: 20px;
 }
 
+.ng-bottom-nav__item--active .ng-bottom-nav__icon-svg {
+  height: 24px;
+  width: 24px;
+}
+
 .ng-bottom-nav__figma-base,
 .ng-bottom-nav__figma-layer {
   display: block;
