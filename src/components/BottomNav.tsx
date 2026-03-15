@@ -17,14 +17,6 @@ const figmaAccountsActiveB = "http://localhost:3845/assets/a011fb5bb421ef65de20b
 
 const figmaIconBaseMarketplaceInactive = "http://localhost:3845/assets/50a71fa678ab5e0f432bb4c4f819735716c786e9.svg";
 const figmaIconBaseMarketplaceActive = "http://localhost:3845/assets/7bf80a4ad4ef0c80f18c4456737828970a9034d0.svg";
-const figmaMarketplaceInactiveA = "http://localhost:3845/assets/8137061773f21e880c52f5b2026643d5e65eef14.svg";
-const figmaMarketplaceInactiveB = "http://localhost:3845/assets/263902020ccb1542e967640ed83b57848a2a6dad.svg";
-const figmaMarketplaceInactiveC = "http://localhost:3845/assets/3247d0e827230b260d423874fea46c494458b3cf.svg";
-const figmaMarketplaceInactiveD = "http://localhost:3845/assets/a4a3e45fd1a328ec93a188afec8c2a88f1b989e2.svg";
-const figmaMarketplaceActiveA = "http://localhost:3845/assets/80d51ead9fcffbe7792129e84e4616494e0f1867.svg";
-const figmaMarketplaceActiveB = "http://localhost:3845/assets/9acdb9585e9ebc0f253182c6c8ea7dc548330c45.svg";
-const figmaMarketplaceActiveC = "http://localhost:3845/assets/c0ab26aa64b5f963ed3ce44ffdc4090240272e1d.svg";
-const figmaMarketplaceActiveD = "http://localhost:3845/assets/136ce53e09a18cefe5a80035f8eb08b4d804d5a1.svg";
 
 const figmaMoreInactiveA = "http://localhost:3845/assets/93cb50bd77d004b7770401f7db7d74ed4f7c06a0.svg";
 const figmaMoreInactiveB = "http://localhost:3845/assets/80bd214bda6193abc6b0ab6e0bc6c47d2997d1d2.svg";
@@ -105,18 +97,15 @@ function InvestIcon({ active }: { active: boolean }) {
 }
 
 function MarketplaceIcon({ active }: { active: boolean }) {
-  const [a, b, c, d] = active
-    ? [figmaMarketplaceActiveA, figmaMarketplaceActiveB, figmaMarketplaceActiveC, figmaMarketplaceActiveD]
-    : [figmaMarketplaceInactiveA, figmaMarketplaceInactiveB, figmaMarketplaceInactiveC, figmaMarketplaceInactiveD];
-
   return (
-    <span className="ng-bottom-nav__figma-icon" aria-hidden="true">
-      <img className="ng-bottom-nav__figma-base" src={active ? figmaIconBaseMarketplaceActive : figmaIconBaseMarketplaceInactive} alt="" />
-      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-market-a" src={a} alt="" />
-      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-market-b" src={b} alt="" />
-      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-market-c" src={c} alt="" />
-      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-market-d" src={d} alt="" />
-    </span>
+    <svg viewBox="0 0 20 20" className="ng-bottom-nav__icon-svg" aria-hidden="true" fill="none">
+      <path d="M2.5 17.5H17.5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M2.5 5.83333V6.66667C2.5 7.32971 2.76339 7.96559 3.23223 8.43443C3.70107 8.90327 4.33696 9.16667 5 9.16667C5.66304 9.16667 6.29893 8.90327 6.76777 8.43443C7.23661 7.96559 7.5 7.32971 7.5 6.66667M2.5 5.83333H17.5M2.5 5.83333L4.16667 2.5H15.8333L17.5 5.83333M7.5 6.66667V5.83333M7.5 6.66667C7.5 7.32971 7.76339 7.96559 8.23223 8.43443C8.70107 8.90327 9.33696 9.16667 10 9.16667C10.663 9.16667 11.2989 8.90327 11.7678 8.43443C12.2366 7.96559 12.5 7.32971 12.5 6.66667M12.5 6.66667V5.83333M12.5 6.66667C12.5 7.32971 12.7634 7.96559 13.2322 8.43443C13.7011 8.90327 14.337 9.16667 15 9.16667C15.663 9.16667 16.2989 8.90327 16.7678 8.43443C17.2366 7.96559 17.5 7.32971 17.5 6.66667V5.83333" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4.16667 17.5V9.04167" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15.8333 17.5V9.04167" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M7.5 17.5V14.1667C7.5 13.7246 7.6756 13.3007 7.98816 12.9882C8.30072 12.6756 8.72464 12.5 9.16667 12.5H10.8333C11.2754 12.5 11.6993 12.6756 12.0118 12.9882C12.3244 13.3007 12.5 13.7246 12.5 14.1667V17.5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
+      {active ? <circle cx="17.6" cy="2.4" r="0.65" fill="currentColor" stroke="none" /> : null}
+    </svg>
   );
 }
 

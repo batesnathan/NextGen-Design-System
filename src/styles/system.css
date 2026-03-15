@@ -2051,6 +2051,15 @@
   width: 100%;
 }
 
+.ng-bottom-nav__icon-svg {
+  display: block;
+  height: 100%;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  width: 100%;
+}
+
 .ng-bottom-nav__figma-base,
 .ng-bottom-nav__figma-layer {
   display: block;
