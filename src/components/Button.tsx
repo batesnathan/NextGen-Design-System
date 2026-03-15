@@ -19,6 +19,7 @@ export function Button({
   leftIcon,
   rightIcon,
   children,
+  style,
   ...props
 }: ButtonProps) {
   const resolvedVariant = variant === "ghost" ? "tertiary" : variant;
@@ -29,6 +30,10 @@ export function Button({
       className={
         `ng-reset ng-button ng-button--${resolvedVariant} ng-button--${size} ${className}`.trim()
       }
+      style={{
+        fontFamily: 'Inter, "Segoe UI", "Helvetica Neue", Arial, sans-serif',
+        ...style,
+      }}
       {...props}
     >
       {leftIcon ? <span className="ng-button__icon">{leftIcon}</span> : null}

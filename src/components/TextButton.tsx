@@ -19,12 +19,17 @@ export function TextButton({
   rightIcon,
   className = "",
   children,
+  style,
   ...props
 }: TextButtonProps) {
   return (
     <button
       type="button"
       className={`ng-reset ng-text-button ng-text-button--${tone} ng-text-button--padding-${padding} ${className}`.trim()}
+      style={{
+        fontFamily: 'Inter, "Segoe UI", "Helvetica Neue", Arial, sans-serif',
+        ...style,
+      }}
       {...props}
     >
       {leftIcon ? <span className="ng-text-button__icon">{leftIcon}</span> : null}

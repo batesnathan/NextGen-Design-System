@@ -248,13 +248,13 @@
   border-radius: 999px;
   cursor: pointer;
   display: inline-flex;
+  font-family: var(--ng-font-family-default);
   font-style: normal;
   font-weight: 700;
   gap: var(--ng-space-2);
   justify-content: center;
   letter-spacing: 0;
   transition: transform 120ms ease, filter 120ms ease, opacity 120ms ease;
-  font-family: inherit;
   white-space: nowrap;
 }
 
@@ -1193,6 +1193,254 @@
   width: 100%;
 }
 
+.ng-accounts {
+  background: var(--ng-color-dashboard-bg);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.ng-accounts__phone {
+  background: #eef2fe;
+  border-radius: 28px;
+  color: #1f2937;
+  max-width: 390px;
+  min-height: 844px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.ng-accounts__status {
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+  left: 28px;
+  position: absolute;
+  top: 12px;
+  z-index: 3;
+}
+
+.ng-accounts__topbar.ng-topbar--slim {
+  box-shadow: 0 2px 8px rgba(49, 14, 110, 0.4);
+  min-height: 124px;
+  padding: 46px 20px 14px;
+}
+
+.ng-accounts__body {
+  display: grid;
+  gap: 12px;
+  padding: 20px 16px 138px;
+}
+
+.ng-accounts__card {
+  border-radius: 24px;
+  box-shadow: none;
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.ng-accounts__card--summary {
+  gap: 14px;
+}
+
+.ng-accounts__title {
+  color: #292b2d;
+  font-size: 33px;
+  font-weight: 500;
+  letter-spacing: -0.66px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ng-accounts__amount-row {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ng-accounts__amount {
+  color: #111111;
+  font-size: 52px;
+  font-weight: 500;
+  letter-spacing: -1.32px;
+  line-height: 1.02;
+  margin: 0;
+}
+
+.ng-accounts__trend {
+  color: #0f172a;
+  font-size: 20px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.ng-accounts__divider {
+  border-top: 1px solid #d5dbeb;
+}
+
+.ng-accounts__subheading {
+  color: #292b2d;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ng-accounts__progress {
+  margin-top: -2px;
+}
+
+.ng-accounts__meta-row {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ng-accounts__meta-row p {
+  color: #292b2d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ng-accounts__meta-row p span {
+  color: #6c727f;
+  margin-right: 4px;
+}
+
+.ng-accounts__contribute {
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 24px;
+  padding: 8px 20px;
+  text-transform: none;
+  width: 100%;
+}
+
+.ng-accounts__investing {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.ng-accounts__investing-amount {
+  color: #111111;
+  font-size: 49px;
+  font-weight: 500;
+  letter-spacing: -1.08px;
+  line-height: 1.05;
+  margin: 4px 0 0;
+}
+
+.ng-accounts__transfer {
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 24px;
+  padding: 8px 20px;
+}
+
+.ng-accounts__activity-title {
+  color: #292b2d;
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.72px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.ng-accounts__activity-list {
+  display: grid;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ng-accounts__activity-item {
+  align-items: flex-start;
+  border-bottom: 1px solid #d5dbeb;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.ng-accounts__activity-item:last-child {
+  border-bottom: 0;
+  padding-bottom: 2px;
+}
+
+.ng-accounts__activity-left {
+  align-items: flex-start;
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ng-accounts__date-badge {
+  background: #f2f3f4;
+  border-radius: 4px;
+  color: #6c727f;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  min-width: 33px;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.ng-accounts__activity-copy p {
+  color: #292b2d;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.ng-accounts__activity-copy span {
+  color: #292b2d;
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.ng-accounts__activity-amount {
+  color: #292b2d;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.64px;
+  line-height: 1.2;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.ng-accounts__activity-amount--positive {
+  color: #027469;
+}
+
+.ng-accounts__bottom-nav-wrap {
+  background: linear-gradient(180deg, rgba(242, 242, 245, 0) 0%, rgba(242, 242, 245, 0.95) 42%, rgba(242, 242, 245, 1) 100%);
+  bottom: 0;
+  left: 0;
+  padding: 16px;
+  position: absolute;
+  right: 0;
+}
+
+.ng-accounts__bottom-nav {
+  margin: 0 auto;
+  width: 100%;
+}
+
 .ng-text--title-3 {
   font-size: var(--ng-font-size-title-3);
   line-height: var(--ng-line-height-title-3);
@@ -1214,6 +1462,7 @@
   color: inherit;
   cursor: pointer;
   display: inline-flex;
+  font-family: var(--ng-font-family-default);
   gap: var(--ng-space-2);
   justify-content: center;
   white-space: nowrap;
@@ -1228,7 +1477,7 @@
 }
 
 .ng-text-button__label {
-  font-family: inherit;
+  font-family: var(--ng-font-family-default);
   font-style: normal;
   text-align: center;
 }
@@ -1679,8 +1928,8 @@
 }
 
 .ng-topbar__mini-icon {
-  height: 20px;
-  width: 20px;
+  height: 24px;
+  width: 24px;
 }
 
 .ng-topbar__card-layer--a {

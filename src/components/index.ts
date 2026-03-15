@@ -1,5 +1,6 @@
 export * from "./Badge";
 export * from "./AccountCard";
+export * from "./AccountsScreen";
 export * from "./Alert";
 export * from "./BottomNav";
 export * from "./Button";
