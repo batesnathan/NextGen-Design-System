@@ -151,7 +151,7 @@
   --ng-size-alert-icon: 24px;
   --ng-size-topbar-width: 393px;
   --ng-size-topbar-slim-height: 128px;
-  --ng-size-topbar-expanded-height: 490px;
+  --ng-size-topbar-expanded-height: 274px;
   --ng-size-toast-width: 361px;
   --ng-size-account-card-large: 361px;
   --ng-size-account-card-small: 334px;
@@ -1435,12 +1435,16 @@
 }
 
 .ng-topbar {
+  box-sizing: border-box;
   color: var(--ng-color-topbar-text);
   display: flex;
   flex-direction: column;
+  isolation: isolate;
+  overflow: clip;
   padding: 56px 0 24px;
   position: relative;
-  width: var(--ng-size-topbar-width);
+  width: 100%;
+  max-width: var(--ng-size-topbar-width);
 }
 
 .ng-topbar--slim {
@@ -1459,6 +1463,7 @@
 
 .ng-topbar__row {
   align-items: center;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   padding: 0 24px;
@@ -1555,9 +1560,12 @@
 }
 
 .ng-topbar__quicklinks {
+  box-sizing: border-box;
   display: inline-flex;
   gap: 16px;
+  overflow: hidden;
   padding: 24px 24px 0;
+  width: 100%;
 }
 
 .ng-topbar__quicklink {
@@ -1580,6 +1588,13 @@
   height: 48px;
   justify-content: center;
   width: 48px;
+}
+
+.ng-topbar__quicklink-svg {
+  color: var(--ng-color-topbar-text);
+  display: block;
+  height: 24px;
+  width: 24px;
 }
 
 .ng-topbar__quicklink-label {

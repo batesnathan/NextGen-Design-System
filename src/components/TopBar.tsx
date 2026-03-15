@@ -43,11 +43,48 @@ function QuickLinkFallbackIcon() {
   return <img src={figmaAiIcon} alt="" className="ng-topbar__mini-icon" aria-hidden="true" />;
 }
 
+function CardIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="ng-topbar__quicklink-svg" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M3 10h18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M7 14h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function ClaimsIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="ng-topbar__quicklink-svg" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 3v18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M16 7.5c0-1.66-1.79-3-4-3s-4 1.34-4 3 1.79 3 4 3 4 1.34 4 3-1.79 3-4 3-4-1.34-4-3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function LearnIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="ng-topbar__quicklink-svg" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M2.5 9.5L12 4l9.5 5.5L12 15 2.5 9.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M6 11.7V16l6 3.5 6-3.5v-4.3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function ShopIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="ng-topbar__quicklink-svg" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.5 9.5h11l-1 9h-9l-1-9Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M9 9.5V8a3 3 0 0 1 6 0v1.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 const defaultQuickLinks: QuickLink[] = [
-  { label: "Card" },
-  { label: "Claims" },
-  { label: "Learn" },
-  { label: "Shop" }
+  { label: "Card", icon: <CardIcon /> },
+  { label: "Claims", icon: <ClaimsIcon /> },
+  { label: "Learn", icon: <LearnIcon /> },
+  { label: "Shop", icon: <ShopIcon /> }
 ];
 
 export function TopBar({
