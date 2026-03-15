@@ -1,9 +1,21 @@
 import type { HTMLAttributes, ReactNode } from "react";
 
 const figmaAiIcon = "http://localhost:3845/assets/3395e07a0c5ee58815b1655366ae54ef6c70797a.svg";
+const figmaAiSparkleVectorA = "http://localhost:3845/assets/5e203496e6830ce3fbeda3f3c5a381bd63131645.svg";
+const figmaAiSparkleVectorB = "http://localhost:3845/assets/8c55d62cd2c93650a2008a59347dcd63bba3362b.svg";
 const figmaNotificationIcon = "http://localhost:3845/assets/215418d8bf834f5a104fc4e7c435df7aa4e90c63.svg";
 const figmaProfileSlim = "http://localhost:3845/assets/f38da9092076f925ed1c7b9f3038b3d099c13ddf.svg";
 const figmaProfileExpanded = "http://localhost:3845/assets/5a2dbeea253e7211db0f0fc55c1b21804f790103.svg";
+const figmaCardVectorA = "http://localhost:3845/assets/ef167eed7c64e38fffe7331306161fe4ceb43eee.svg";
+const figmaCardVectorB = "http://localhost:3845/assets/f4361f72821e4d6b25b080f95031db39db1dc5cd.svg";
+const figmaCardVectorC = "http://localhost:3845/assets/e10f05383a422bba86e032af1469a8450d0cff01.svg";
+const figmaCardVectorD = "http://localhost:3845/assets/496c01b867a61c2e1cb1aaee4c9fbf637b984a09.svg";
+const figmaClaimsVectorA = "http://localhost:3845/assets/e66f56eb5af36a40458f3e81cabc874bbf0af7d9.svg";
+const figmaClaimsVectorB = "http://localhost:3845/assets/49b557c877b7c021d80a6ba87922ce19d5293be5.svg";
+const figmaLearnVectorA = "http://localhost:3845/assets/e355a4c0eecd9d0b4f13fb90a322477457245629.svg";
+const figmaLearnVectorB = "http://localhost:3845/assets/258797fd71d1cc139453fd15c9f0e98e7900fdff.svg";
+const figmaShopVectorA = "http://localhost:3845/assets/5d4356d38625e7338306cc8747eec01fea93ae7a.svg";
+const figmaShopVectorB = "http://localhost:3845/assets/fe6fa3af762e8bd9d3c459a3a7cb76c29f0530fe.svg";
 
 type TopBarSize = "slim" | "expanded";
 
@@ -21,7 +33,13 @@ export type TopBarProps = HTMLAttributes<HTMLElement> & {
 };
 
 function SparkleIcon() {
-  return <img src={figmaAiIcon} alt="" className="ng-topbar__glyph" aria-hidden="true" />;
+  return (
+    <span className="ng-topbar__glyph-stack" aria-hidden="true">
+      <img src={figmaAiIcon} alt="" className="ng-topbar__glyph" />
+      <img src={figmaAiSparkleVectorA} alt="" className="ng-topbar__glyph-layer ng-topbar__glyph-layer--a" />
+      <img src={figmaAiSparkleVectorB} alt="" className="ng-topbar__glyph-layer ng-topbar__glyph-layer--b" />
+    </span>
+  );
 }
 
 function NotificationIcon() {
@@ -40,43 +58,48 @@ function ProfileIcon({ expanded }: { expanded: boolean }) {
 }
 
 function QuickLinkFallbackIcon() {
-  return <img src={figmaAiIcon} alt="" className="ng-topbar__mini-icon" aria-hidden="true" />;
+  return <SparkleIcon />;
 }
 
 function CardIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="ng-topbar__quicklink-svg" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.6" />
-      <path d="M3 10h18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M7 14h4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
+    <span className="ng-topbar__glyph-stack" aria-hidden="true">
+      <img src={figmaAiIcon} alt="" className="ng-topbar__glyph" />
+      <img src={figmaCardVectorA} alt="" className="ng-topbar__glyph-layer ng-topbar__card-layer--a" />
+      <img src={figmaCardVectorB} alt="" className="ng-topbar__glyph-layer ng-topbar__card-layer--b" />
+      <img src={figmaCardVectorC} alt="" className="ng-topbar__glyph-layer ng-topbar__card-layer--c" />
+      <img src={figmaCardVectorD} alt="" className="ng-topbar__glyph-layer ng-topbar__card-layer--d" />
+    </span>
   );
 }
 
 function ClaimsIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="ng-topbar__quicklink-svg" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 3v18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <path d="M16 7.5c0-1.66-1.79-3-4-3s-4 1.34-4 3 1.79 3 4 3 4 1.34 4 3-1.79 3-4 3-4-1.34-4-3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <span className="ng-topbar__glyph-stack" aria-hidden="true">
+      <img src={figmaAiIcon} alt="" className="ng-topbar__glyph" />
+      <img src={figmaClaimsVectorA} alt="" className="ng-topbar__glyph-layer ng-topbar__claims-layer--a" />
+      <img src={figmaClaimsVectorB} alt="" className="ng-topbar__glyph-layer ng-topbar__claims-layer--b" />
+    </span>
   );
 }
 
 function LearnIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="ng-topbar__quicklink-svg" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M2.5 9.5L12 4l9.5 5.5L12 15 2.5 9.5Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-      <path d="M6 11.7V16l6 3.5 6-3.5v-4.3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <span className="ng-topbar__glyph-stack" aria-hidden="true">
+      <img src={figmaAiIcon} alt="" className="ng-topbar__glyph" />
+      <img src={figmaLearnVectorA} alt="" className="ng-topbar__glyph-layer ng-topbar__learn-layer--a" />
+      <img src={figmaLearnVectorB} alt="" className="ng-topbar__glyph-layer ng-topbar__learn-layer--b" />
+    </span>
   );
 }
 
 function ShopIcon() {
   return (
-    <svg viewBox="0 0 24 24" className="ng-topbar__quicklink-svg" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6.5 9.5h11l-1 9h-9l-1-9Z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
-      <path d="M9 9.5V8a3 3 0 0 1 6 0v1.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    </svg>
+    <span className="ng-topbar__glyph-stack" aria-hidden="true">
+      <img src={figmaAiIcon} alt="" className="ng-topbar__glyph" />
+      <img src={figmaShopVectorA} alt="" className="ng-topbar__glyph-layer ng-topbar__shop-layer--a" />
+      <img src={figmaShopVectorB} alt="" className="ng-topbar__glyph-layer ng-topbar__shop-layer--b" />
+    </span>
   );
 }
 
@@ -111,6 +134,7 @@ export function TopBar({
           </div>
         ) : (
           <button type="button" className="ng-topbar__chat-chip" aria-label="Open AI chat">
+            <span className="ng-topbar__chip-overlay" aria-hidden="true" />
             <SparkleIcon />
           </button>
         )}
@@ -130,6 +154,7 @@ export function TopBar({
         <>
           <div className="ng-topbar__search-wrap">
             <button type="button" className="ng-topbar__search-pill" aria-label="How can I help you today?">
+              <span className="ng-topbar__chip-overlay" aria-hidden="true" />
               <SparkleIcon />
               <span>How can I help you today?</span>
             </button>
