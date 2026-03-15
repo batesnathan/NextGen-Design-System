@@ -1,5 +1,42 @@
 import type { HTMLAttributes } from "react";
 
+const figmaIconBaseHomeInactive = "http://localhost:3845/assets/32b4f05fd514dc5d8b4453590e680e45f9f94a2e.svg";
+const figmaIconBaseHomeActive = "http://localhost:3845/assets/3314923fcc531300de999ae9d550bb9fe51ad1ef.svg";
+const figmaHomeInactiveA = "http://localhost:3845/assets/c63f630d67ed830f0bdc52d96601533733f51c66.svg";
+const figmaHomeInactiveB = "http://localhost:3845/assets/cafeee413227f9308ec8b66819f439e76cdbc133.svg";
+const figmaHomeInactiveC = "http://localhost:3845/assets/51a641c9e6e00d78d79f4f2f3b098bdedfe02f4a.svg";
+const figmaHomeActiveA = "http://localhost:3845/assets/03d4c8ffc926b37419354523b3bfede6af3f01b1.svg";
+const figmaHomeActiveB = "http://localhost:3845/assets/ec40956f13845b0b0e11166a6251bcd2af96e3aa.svg";
+const figmaHomeActiveC = "http://localhost:3845/assets/543713991bffc019748ba766512b585234fc4636.svg";
+
+const figmaIconBaseAccountsInactive = "http://localhost:3845/assets/e67a7b74fd5df7145414a8716a4b470405811329.svg";
+const figmaIconBaseAccountsActive = "http://localhost:3845/assets/0369ad5ba8eb38d38bc1163a252796e06398a901.svg";
+const figmaAccountsInactiveA = "http://localhost:3845/assets/61f4149e2bd1ac2d939021c1f51bc9d5f8a31f83.svg";
+const figmaAccountsInactiveB = "http://localhost:3845/assets/5899c7e712844209c000d74bdabee68f6db72841.svg";
+const figmaAccountsActiveA = "http://localhost:3845/assets/b12655ff51e581cbb670608c0e9bedf8032ea9ea.svg";
+const figmaAccountsActiveB = "http://localhost:3845/assets/a011fb5bb421ef65de20b76a58f3328759e14f35.svg";
+
+const figmaIconBaseMarketplaceInactive = "http://localhost:3845/assets/50a71fa678ab5e0f432bb4c4f819735716c786e9.svg";
+const figmaIconBaseMarketplaceActive = "http://localhost:3845/assets/7bf80a4ad4ef0c80f18c4456737828970a9034d0.svg";
+const figmaMarketplaceInactiveA = "http://localhost:3845/assets/8137061773f21e880c52f5b2026643d5e65eef14.svg";
+const figmaMarketplaceInactiveB = "http://localhost:3845/assets/263902020ccb1542e967640ed83b57848a2a6dad.svg";
+const figmaMarketplaceInactiveC = "http://localhost:3845/assets/3247d0e827230b260d423874fea46c494458b3cf.svg";
+const figmaMarketplaceInactiveD = "http://localhost:3845/assets/a4a3e45fd1a328ec93a188afec8c2a88f1b989e2.svg";
+const figmaMarketplaceActiveA = "http://localhost:3845/assets/80d51ead9fcffbe7792129e84e4616494e0f1867.svg";
+const figmaMarketplaceActiveB = "http://localhost:3845/assets/9acdb9585e9ebc0f253182c6c8ea7dc548330c45.svg";
+const figmaMarketplaceActiveC = "http://localhost:3845/assets/c0ab26aa64b5f963ed3ce44ffdc4090240272e1d.svg";
+const figmaMarketplaceActiveD = "http://localhost:3845/assets/136ce53e09a18cefe5a80035f8eb08b4d804d5a1.svg";
+
+const figmaMoreInactiveA = "http://localhost:3845/assets/93cb50bd77d004b7770401f7db7d74ed4f7c06a0.svg";
+const figmaMoreInactiveB = "http://localhost:3845/assets/80bd214bda6193abc6b0ab6e0bc6c47d2997d1d2.svg";
+const figmaMoreInactiveC = "http://localhost:3845/assets/ee01d15db1c155a7d76ecf7975847151cff15360.svg";
+const figmaMoreActiveA = "http://localhost:3845/assets/20273935ffb56431c1cfe24f3dc7e524fbaabfe1.svg";
+const figmaMoreActiveB = "http://localhost:3845/assets/015d5b9609b1e89948014d4ba76f05a311d3e08c.svg";
+const figmaMoreActiveC = "http://localhost:3845/assets/7e9fe8300f3fa399e6e86fccfdec779682b9ea1f.svg";
+
+const figmaInvestInactive = "http://localhost:3845/assets/0deff5391a793fc741147ff59f9bd3f8d3799a38.svg";
+const figmaInvestActive = "http://localhost:3845/assets/fd1fa5c28bd1b62904d11e5721540636988c0d07.svg";
+
 export const bottomNavItems = ["home", "accounts", "invest", "marketplace", "more"] as const;
 
 export type BottomNavItem = (typeof bottomNavItems)[number];
@@ -23,53 +60,71 @@ export type BottomNavProps = HTMLAttributes<HTMLElement> & {
 };
 
 function HomeIcon({ active }: { active: boolean }) {
+  const [a, b, c] = active
+    ? [figmaHomeActiveA, figmaHomeActiveB, figmaHomeActiveC]
+    : [figmaHomeInactiveA, figmaHomeInactiveB, figmaHomeInactiveC];
+
   return (
-    <svg viewBox="0 0 24 24" className="ng-bottom-nav__icon-svg" aria-hidden="true">
-      <path d="M3.5 11.5L12 4.75L20.5 11.5" />
-      <path d="M6.75 10.75V19.25H17.25V10.75" />
-      <path d="M10.2 19.25V14H13.8V19.25" />
-      {active ? <circle cx="12" cy="3.65" r="0.65" fill="currentColor" stroke="none" /> : null}
-    </svg>
+    <span className="ng-bottom-nav__figma-icon" aria-hidden="true">
+      <img className="ng-bottom-nav__figma-base" src={active ? figmaIconBaseHomeActive : figmaIconBaseHomeInactive} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-a" src={a} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-b" src={b} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-c" src={c} alt="" />
+    </span>
   );
 }
 
-function AccountsIcon() {
+function AccountsIcon({ active }: { active: boolean }) {
+  const [a, b] = active
+    ? [figmaAccountsActiveA, figmaAccountsActiveB]
+    : [figmaAccountsInactiveA, figmaAccountsInactiveB];
+
   return (
-    <svg viewBox="0 0 24 24" className="ng-bottom-nav__icon-svg" aria-hidden="true">
-      <rect x="3.75" y="6.5" width="16.5" height="11.5" rx="2.25" />
-      <path d="M3.75 10H20.25" />
-      <path d="M7.25 14.5H11.75" />
-    </svg>
+    <span className="ng-bottom-nav__figma-icon" aria-hidden="true">
+      <img className="ng-bottom-nav__figma-base" src={active ? figmaIconBaseAccountsActive : figmaIconBaseAccountsInactive} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-accounts-a" src={a} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-accounts-b" src={b} alt="" />
+    </span>
   );
 }
 
-function InvestIcon() {
+function InvestIcon({ active }: { active: boolean }) {
   return (
-    <svg viewBox="0 0 24 24" className="ng-bottom-nav__icon-svg" aria-hidden="true">
-      <path d="M4 15.25L9.25 10L13.1 13.85L19.5 7.45" />
-      <path d="M15.7 7.45H19.5V11.25" />
-    </svg>
+    <span className="ng-bottom-nav__figma-icon" aria-hidden="true">
+      <img className="ng-bottom-nav__figma-base" src={active ? figmaIconBaseMarketplaceActive : figmaIconBaseMarketplaceInactive} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-invest" src={active ? figmaInvestActive : figmaInvestInactive} alt="" />
+    </span>
   );
 }
 
-function MarketplaceIcon() {
+function MarketplaceIcon({ active }: { active: boolean }) {
+  const [a, b, c, d] = active
+    ? [figmaMarketplaceActiveA, figmaMarketplaceActiveB, figmaMarketplaceActiveC, figmaMarketplaceActiveD]
+    : [figmaMarketplaceInactiveA, figmaMarketplaceInactiveB, figmaMarketplaceInactiveC, figmaMarketplaceInactiveD];
+
   return (
-    <svg viewBox="0 0 24 24" className="ng-bottom-nav__icon-svg" aria-hidden="true">
-      <path d="M5 10.25H19" />
-      <path d="M7.25 10.25V8.4C7.25 7.1 8.3 6.05 9.6 6.05H14.4C15.7 6.05 16.75 7.1 16.75 8.4V10.25" />
-      <rect x="4.5" y="10.25" width="15" height="8.75" rx="1.9" />
-      <path d="M12 13.2V15.8" />
-    </svg>
+    <span className="ng-bottom-nav__figma-icon" aria-hidden="true">
+      <img className="ng-bottom-nav__figma-base" src={active ? figmaIconBaseMarketplaceActive : figmaIconBaseMarketplaceInactive} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-market-a" src={a} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-market-b" src={b} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-market-c" src={c} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-market-d" src={d} alt="" />
+    </span>
   );
 }
 
-function MoreIcon() {
+function MoreIcon({ active }: { active: boolean }) {
+  const [a, b, c] = active
+    ? [figmaMoreActiveA, figmaMoreActiveB, figmaMoreActiveC]
+    : [figmaMoreInactiveA, figmaMoreInactiveB, figmaMoreInactiveC];
+
   return (
-    <svg viewBox="0 0 24 24" className="ng-bottom-nav__icon-svg" aria-hidden="true">
-      <circle cx="6.5" cy="12" r="1.5" />
-      <circle cx="12" cy="12" r="1.5" />
-      <circle cx="17.5" cy="12" r="1.5" />
-    </svg>
+    <span className="ng-bottom-nav__figma-icon" aria-hidden="true">
+      <img className="ng-bottom-nav__figma-base" src={active ? figmaIconBaseMarketplaceActive : figmaIconBaseMarketplaceInactive} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-more-a" src={a} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-more-b" src={b} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-more-c" src={c} alt="" />
+    </span>
   );
 }
 
@@ -79,18 +134,18 @@ function NavIcon({ item, active }: { item: BottomNavItem; active: boolean }) {
   }
 
   if (item === "accounts") {
-    return <AccountsIcon />;
+    return <AccountsIcon active={active} />;
   }
 
   if (item === "invest") {
-    return <InvestIcon />;
+    return <InvestIcon active={active} />;
   }
 
   if (item === "marketplace") {
-    return <MarketplaceIcon />;
+    return <MarketplaceIcon active={active} />;
   }
 
-  return <MoreIcon />;
+  return <MoreIcon active={active} />;
 }
 
 export function BottomNav({ activeItem = "home", onItemSelect, className = "", ...props }: BottomNavProps) {
