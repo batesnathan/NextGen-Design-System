@@ -1,13 +1,12 @@
 import type { HTMLAttributes } from "react";
 
-const figmaIconBaseHomeInactive = "http://localhost:3845/assets/32b4f05fd514dc5d8b4453590e680e45f9f94a2e.svg";
-const figmaIconBaseHomeActive = "http://localhost:3845/assets/3314923fcc531300de999ae9d550bb9fe51ad1ef.svg";
-const figmaHomeInactiveA = "http://localhost:3845/assets/c63f630d67ed830f0bdc52d96601533733f51c66.svg";
-const figmaHomeInactiveB = "http://localhost:3845/assets/cafeee413227f9308ec8b66819f439e76cdbc133.svg";
-const figmaHomeInactiveC = "http://localhost:3845/assets/51a641c9e6e00d78d79f4f2f3b098bdedfe02f4a.svg";
-const figmaHomeActiveA = "http://localhost:3845/assets/03d4c8ffc926b37419354523b3bfede6af3f01b1.svg";
-const figmaHomeActiveB = "http://localhost:3845/assets/ec40956f13845b0b0e11166a6251bcd2af96e3aa.svg";
-const figmaHomeActiveC = "http://localhost:3845/assets/543713991bffc019748ba766512b585234fc4636.svg";
+const figmaIconBaseHomeDefault = "http://localhost:3845/assets/e67a7b74fd5df7145414a8716a4b470405811329.svg";
+const figmaHomeDefaultA = "http://localhost:3845/assets/72357a0a93ddf73f88bc7a00688b426ceac3dd27.svg";
+const figmaHomeDefaultB = "http://localhost:3845/assets/681360794c106f45481e6ab9e91cc1df4b821295.svg";
+const figmaHomeDefaultC = "http://localhost:3845/assets/0f2981d43fc887d7f973d51588cc664f342c4e49.svg";
+const figmaHomeSelectedA = "http://localhost:3845/assets/0249393b0f8514699a079f64eb4ed1fa7a5e5644.svg";
+const figmaHomeSelectedB = "http://localhost:3845/assets/7f8af796ba05742b6543c9eb54d21ca40dfb8982.svg";
+const figmaHomeSelectedC = "http://localhost:3845/assets/e9b61ce844497caf0fd8743a3112f4b668119dbf.svg";
 
 const figmaIconBaseAccountsInactive = "http://localhost:3845/assets/e67a7b74fd5df7145414a8716a4b470405811329.svg";
 const figmaIconBaseAccountsActive = "http://localhost:3845/assets/0369ad5ba8eb38d38bc1163a252796e06398a901.svg";
@@ -60,16 +59,24 @@ export type BottomNavProps = HTMLAttributes<HTMLElement> & {
 };
 
 function HomeIcon({ active }: { active: boolean }) {
-  const [a, b, c] = active
-    ? [figmaHomeActiveA, figmaHomeActiveB, figmaHomeActiveC]
-    : [figmaHomeInactiveA, figmaHomeInactiveB, figmaHomeInactiveC];
+  if (active) {
+    return (
+      <span className="ng-bottom-nav__home-selected" aria-hidden="true">
+        <span className="ng-bottom-nav__home-selected-icon">
+          <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-selected-a" src={figmaHomeSelectedA} alt="" />
+          <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-selected-b" src={figmaHomeSelectedB} alt="" />
+          <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-selected-c" src={figmaHomeSelectedC} alt="" />
+        </span>
+      </span>
+    );
+  }
 
   return (
     <span className="ng-bottom-nav__figma-icon" aria-hidden="true">
-      <img className="ng-bottom-nav__figma-base" src={active ? figmaIconBaseHomeActive : figmaIconBaseHomeInactive} alt="" />
-      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-a" src={a} alt="" />
-      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-b" src={b} alt="" />
-      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-c" src={c} alt="" />
+      <img className="ng-bottom-nav__figma-base" src={figmaIconBaseHomeDefault} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-a" src={figmaHomeDefaultA} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-b" src={figmaHomeDefaultB} alt="" />
+      <img className="ng-bottom-nav__figma-layer ng-bottom-nav__figma-home-c" src={figmaHomeDefaultC} alt="" />
     </span>
   );
 }
