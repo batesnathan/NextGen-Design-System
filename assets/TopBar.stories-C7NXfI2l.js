@@ -1,4 +1,4 @@
-import{T as t}from"./TopBar-BOCUNRJo.js";import"./jsx-runtime-u17CrQMm.js";const r={title:"NextGen/Components/Top Bar",component:t,parameters:{layout:"centered",backgrounds:{default:"canvas",values:[{name:"canvas",value:"#d9d9d9"}]}},tags:["autodocs"]},e={args:{size:"slim"}},a={args:{size:"expanded",showItems:!0,greetingName:"Scott",notificationCount:2}},s={args:{size:"expanded",showItems:!1,greetingName:"Scott",notificationCount:2}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
+import{T as t}from"./TopBar-B05l42Zi.js";import"./jsx-runtime-u17CrQMm.js";const r={title:"NextGen/Components/Top Bar",component:t,parameters:{layout:"centered",backgrounds:{default:"canvas",values:[{name:"canvas",value:"#d9d9d9"}]}},tags:["autodocs"]},e={args:{size:"slim"}},a={args:{size:"expanded",showItems:!0,greetingName:"Scott",notificationCount:2}},s={args:{size:"expanded",showItems:!1,greetingName:"Scott",notificationCount:2}};e.parameters={...e.parameters,docs:{...e.parameters?.docs,source:{originalSource:`{
   args: {
     size: "slim"
   }
