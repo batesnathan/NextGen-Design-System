@@ -1,0 +1,255 @@
+import { Meta, Title, Description, ComponentMeta } from '@storybook/blocks';
+
+<Meta title="📖 AI Implementation Contract" />
+
+# AI Implementation Contract
+
+## Overview
+
+This document defines how AI agents and human engineers collaborate with the NextGen Design System to build pixel-perfect, well-tested components.
+
+### The Promise
+
+✅ Every component in this design system matches Figma exactly  
+✅ Every component has a full state matrix in Storybook  
+✅ Every component is testable and validated  
+✅ Every component is traceable back to Figma  
+
+---
+
+## What "AI-Ready" Means
+
+An **AI-ready** component has:
+
+1. **Figma Fidelity** — Pixel-perfect match with design source
+2. **State Coverage** — Full state matrix stories (variant × size × state combinations)
+3. **Design References** — Figma node IDs in code and commits
+4. **Token Integration** — Uses semantic tokens for colors/spacing/typography
+5. **Icon Precision** — Icons use layered SVG + CSS positioning
+6. **Visual Proof** — Passes visual regression tests
+7. **Type Safety** — TypeScript validation passes
+
+---
+
+## Component Story Template (for AI readability)
+
+The Storybook story is the communication channel between humans and AI.
+
+```typescript
+// Example: Button component
+export const SmallPrimaryDisabled = {
+  args: { 
+    size: 'small', 
+    variant: 'primary', 
+    disabled: true 
+  },
+  parameters: {
+    figma: {
+      // AI reads this to find design source
+      url: 'https://figma.com/design/[fileKey]/...?node-id=6:70'
+    },
+    docs: {
+      description: {
+        story: 'Acceptance: 48px width, 32px height, gray background, pointer-events: none'
+      }
+    }
+  }
+};
+```
+
+**What AI reads:**
+- `args`: Component props to render this state
+- `figma.url`: Design source in Figma
+- `description.story`: Human-written acceptance criteria
+
+---
+
+## AI Implementation Workflow
+
+### Step 1: Read the Rules
+1. Open **[AGENTS.md](../../AGENTS.md)** (canonical rules)
+2. Check for AI-specific instructions in this story's description
+
+### Step 2: Fetch Design Context
+```bash
+mcp_figma_get_design_context [node-id]
+# ← Returns exact layer structure, paths, inset percentages
+```
+
+### Step 3: Build Component
+- Use Figma geometry exactly (layer insets, overflow, sizes)
+- Import tokens from semantic layer
+- Create CSS class names following `ng-[component]--[variant]` pattern
+
+### Step 4: Create Story Matrix
+- For each meaningful state combination:
+  - Create a story with `args`
+  - Add acceptance notes in `description.story`
+  - Reference Figma parameters
+
+### Step 5: Validate
+```bash
+npm run check                # ✓ TypeScript
+npm run build-storybook      # ✓ Storybook builds
+npm run test:visual          # ✓ Visual regression
+```
+
+### Step 6: Commit with Context
+```bash
+git commit -m "feat: add Button component
+
+- Figma node: 6:70
+- Design: https://figma.com/design/.../6:70
+- 36 state matrix stories
+- All validation passes"
+```
+
+---
+
+## What AI Should NOT Do
+
+❌ **Screenshot-only implementation** — Always use `mcp_figma_get_design_context`  
+❌ **Inline icons in components** — Use `src/components/icons/` library  
+❌ **Hardcoded colors** — Use semantic tokens  
+❌ **Localhost URLs in code** — Inline SVG or import components  
+❌ **Single story per component** — Create full state matrix  
+❌ **Skip visual regression** — Run tests before merging  
+
+---
+
+## Storybook as AI Protocol
+
+Every story is an **AI-readable contract**:
+
+| Story Field | AI Reads | Example |
+|-------------|----------|---------|
+| `args` | Component props to render | `{ size: 'large', variant: 'primary' }` |
+| `figma.url` | Design source | `https://figma.com/design/...?node-id=6:70` |
+| `description.story` | Acceptance criteria | `"48px height, 8px padding, shadow-md"` |
+| Component `title` | Hierarchy | `"Components/Button"` |
+
+**AI processes this as:**
+- Which props control this visual state?
+- What does the design look like? (via Figma)
+- What are the constraints? (via description)
+- Does my render pass visual regression? (via test)
+
+---
+
+## Icon Accuracy Checklist
+
+Before shipping any icon:
+
+- [ ] Layers preserve Figma structure (inset + overflow)
+- [ ] SVG paths match original viewBox and strokeWidth
+- [ ] Uses `currentColor` unless explicit fixed color required
+- [ ] Container size matches spec (24px, 32px, 48px)
+- [ ] Visual silhouette matches Figma screenshot
+- [ ] JSDoc includes Figma node ID
+- [ ] `npm run check` passes
+- [ ] `npm run build-storybook` succeeds
+
+See **[docs/ICON_LIBRARY.md](../ICON_LIBRARY.md)** for full icon workflow.
+
+---
+
+## Continuous Validation
+
+### You (AI or Engineer) Run Locally:
+```bash
+npm run check              # ✓ TypeScript valid
+npm run build-storybook   # ✓ All stories render
+npm run test:visual       # ✓ Visual regression baseline
+```
+
+### CI Runs on Every PR:
+- ✓ TypeScript check
+- ✓ Storybook build
+- ✓ Figma Node ID validation
+- ✓ Visual regression tests
+- ✓ PR comment with results
+
+**Green checkmark = safe to merge**
+
+---
+
+## Common Questions
+
+**Q: What if Storybook story says something different than Figma?**  
+A: Figma is the source of truth. Flag the discrepancy and ask for clarification.
+
+**Q: Can I use my own icon library instead of the shared one?**  
+A: No. Check `src/components/icons/` first. Follow ICON_LIBRARY.md if creating new.
+
+**Q: What if component doesn't have enough states in Storybook?**  
+A: Add stories for all combinations (variant × size × state). Aim for >6 stories minimum.
+
+**Q: How do I know if a component is AI-ready?**  
+A: ✅ Has Figma reference ✅ Has >3 state matrix stories ✅ Visual tests pass ✅ npm run check passes
+
+**Q: Should I update visual regression snapshots?**  
+A: Only if design intentionally changed. Run `npm run test:visual:update`, review, then commit.
+
+---
+
+## Key Files
+
+| File | Purpose | Who Reads |
+|------|---------|-----------|
+| **[AGENTS.md](../../AGENTS.md)** | Canonical execution rules | AI agents (read first!) |
+| **[docs/ICON_LIBRARY.md](../ICON_LIBRARY.md)** | Icon system architecture | Anyone working with icons |
+| **[docs/COMPONENTS.md](../COMPONENTS.md)** | Component API reference | Engineers building with system |
+| **[docs/TOKENS.md](../TOKENS.md)** | Token generation guide | Engineers extending tokens |
+| **[tests/README.md](../../tests/README.md)** | Visual regression guide | anyone running tests |
+| **[DESIGN_SYSTEM.md](../../DESIGN_SYSTEM.md)** | Full architecture | Deep-dive learning |
+
+---
+
+## How to Read This Storybook
+
+### For Engineers:
+1. List on left shows all components
+2. Click component to see all stories
+3. Read story descriptions for acceptance criteria
+4. Check Figma link to see design source
+5. Use acceptance notes when building similar components
+
+### For AI Agents:
+1. Read **[AGENTS.md](../../AGENTS.md)** first
+2. Load component's story source (this page shows the pattern)
+3. Parse `args`, `figma.url`, `description`
+4. Fetch Figma design context via MCP
+5. Build implementation to match geometry exactly
+6. Create stories for all state combinations
+7. Run validation and commit with Figma references
+
+### For Design Reviewers:
+1. Navigate to component in Storybook
+2. Use **Controls** panel to adjust props
+3. Compare live render with Figma design
+4. Check that all states are documented
+5. Approve or request changes
+
+---
+
+## Next Steps
+
+1. **Read [AGENTS.md](../../AGENTS.md)** — Execution rules and Figma workflow
+2. **Explore components** — Click a component to see full story matrix
+3. **Run tests locally** — `npm run test:visual` to validate locally
+4. **Start building** — Use this Storybook as reference for new components
+
+---
+
+## Questions or Issues?
+
+- ❓ Icon accuracy? → See [docs/ICON_LIBRARY.md](../ICON_LIBRARY.md)
+- ❓ Storybook structure? → See [docs/COMPONENTS.md](../COMPONENTS.md)
+- ❓ Token system? → See [docs/TOKENS.md](../TOKENS.md)
+- ❓ AI workflow? → See [AGENTS.md](../../AGENTS.md)
+- ❓ Full architecture? → See [DESIGN_SYSTEM.md](../../DESIGN_SYSTEM.md)
+
+---
+
+**Built with ❤️ for AI-first design development**  
+*Last Updated: April 2025*

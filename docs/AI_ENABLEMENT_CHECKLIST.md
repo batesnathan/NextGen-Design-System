@@ -16,16 +16,16 @@ This checklist is for making the repository reliably usable by engineers and AI 
 
 - [x] Shared icon library exists (`src/components/icons`).
 - [x] TopBar icons consume shared icon exports.
-- [ ] **BottomNav icons** → `src/components/icons/BottomNavIcons.tsx` (HomeIcon, AccountsIcon, InvestIcon, MarketplaceIcon, MoreIcon)
-- [ ] **Alert icon** → `src/components/icons/AlertIcons.tsx` (AlertStatusIcon)
-- [ ] **Radio icon** → `src/components/icons/RadioIcons.tsx` (SelectedRadioIcon)
-- [ ] **Chip icons** → `src/components/icons/ChipIcons.tsx` (ChipLeftIcon, ChipRightIcon)
-- [ ] Refactor BottomNav.tsx to consume shared icon exports
-- [ ] Refactor Alert.tsx to consume shared icon exports
-- [ ] Refactor RadioButton.tsx to consume shared icon exports
-- [ ] Refactor Chip.tsx to consume shared icon exports
-- [ ] Add icon naming conventions and registry in `docs/ICON_LIBRARY.md`
-- [ ] Run validation: `npm run check && npm run build-storybook`
+- [x] **BottomNav icons** → `src/components/icons/BottomNavIcons.tsx` (HomeIcon, AccountsIcon, InvestIcon, MarketplaceIcon, MoreIcon)
+- [x] **Alert icon** → `src/components/icons/AlertIcons.tsx` (AlertStatusIcon)
+- [x] **Radio icon** → `src/components/icons/RadioIcons.tsx` (SelectedRadioIcon)
+- [x] **Chip icons** → `src/components/icons/ChipIcons.tsx` (ChipLeftIcon, ChipRightIcon)
+- [x] Refactor BottomNav.tsx to consume shared icon exports
+- [x] Refactor Alert.tsx to consume shared icon exports
+- [x] Refactor RadioButton.tsx to consume shared icon exports
+- [x] Refactor Chip.tsx to consume shared icon exports
+- [x] Add icon naming conventions and registry in `docs/ICON_LIBRARY.md`
+- [x] Run validation: `npm run check && npm run build-storybook`
 
 ## Phase 3: Governance Gates (Visual Regression)
 
@@ -67,13 +67,13 @@ This checklist is for making the repository reliably usable by engineers and AI 
   - Storybook as communication protocol
   - Escalation procedures for edge cases
 - [ ] Add state matrix stories to atomic components (priority order):
-  - [ ] Button (3 variants × 3 sizes × 4 states = 36 stories)
-  - [ ] Input (varied focus/fill/error states = 8-12 stories)
-  - [ ] Badge (5 tones × 2 styles = 10 stories)
-  - [ ] Card, Checkbox, Radio, TextButton, IconButton (3+ stories each)
-- [ ] Add acceptance notes to each story (size/color/spacing tolerances)
-- [ ] Add Figma node ID references in story metadata
-- [ ] Run validation: `npm run build-storybook` ✓
+  - [x] Button (expanded variant/size/state matrix with acceptance notes)
+  - [x] Input (expanded focus/fill/error/icon/affix state coverage)
+  - [x] Badge (tone matrix + extended label coverage)
+  - [x] Card, Checkbox, Radio, TextButton, IconButton (3+ stories with acceptance notes)
+- [x] Add acceptance notes to each story (size/color/spacing tolerances)
+- [x] Add Figma node ID references in story metadata
+- [x] Run validation: `npm run build-storybook`
 
 ## Phase 5: Operational Excellence (Sustainability)
 
