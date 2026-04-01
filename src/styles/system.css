@@ -1537,21 +1537,22 @@
   align-items: center;
   border: 1px solid var(--ng-color-control-checkbox-border);
   border-radius: var(--ng-border-radius-sm);
+  box-sizing: border-box;
   display: inline-flex;
   height: var(--ng-size-control-checkbox);
   justify-content: center;
+  overflow: hidden;
   width: var(--ng-size-control-checkbox);
 }
 
 .ng-checkbox--checked .ng-checkbox__icon {
   background: var(--ng-color-control-checkbox-selected);
-  padding: var(--ng-size-control-checkbox-padding);
 }
 
 .ng-checkbox__check {
   display: block;
-  height: 100%;
-  width: 100%;
+  height: 14px;
+  width: 14px;
 }
 
 .ng-checkbox__check path {
