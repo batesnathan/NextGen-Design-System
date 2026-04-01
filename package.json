@@ -17,6 +17,7 @@
     "build:tokens": "node ./scripts/build-tokens.mjs",
     "build": "npm run build:tokens && tsc -p tsconfig.json",
     "check": "tsc -p tsconfig.json --noEmit",
+    "validate:design": "npm run check && npm run build-storybook",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

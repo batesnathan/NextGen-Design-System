@@ -1,0 +1,51 @@
+name: Quality Gates
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Type Check
+        run: npm run check
+
+      - name: Storybook Build
+        run: npm run build-storybook
+
+  pr-figma-policy:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce PR Template + Figma Node IDs
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          if [ -z "$PR_BODY" ]; then
+            echo "PR description is empty. Fill out the PR template."
+            exit 1
+          fi
+
+          echo "$PR_BODY" | grep -qi "Figma Node IDs" || {
+            echo "PR must include a 'Figma Node IDs' section."
+            exit 1
+          }
+
+          echo "$PR_BODY" | grep -Eq "[0-9]+:[0-9]+" || {
+            echo "At least one Figma node id (e.g. 6:70) is required in PR body."
+            exit 1
+          }

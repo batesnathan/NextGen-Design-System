@@ -4,6 +4,9 @@ import '../src/styles/system.css'
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: (a, b) => a.title.localeCompare(b.title, undefined, { numeric: true, sensitivity: 'base' }),
+    },
     controls: {
       matchers: {
        color: /(background|color)$/i,

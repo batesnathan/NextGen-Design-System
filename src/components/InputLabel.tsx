@@ -1,7 +1,5 @@
 import type { HTMLAttributes, ReactNode } from "react";
 
-const figmaTooltipIcon = "http://localhost:3845/assets/50a71fa678ab5e0f432bb4c4f819735716c786e9.svg";
-
 export type InputLabelProps = HTMLAttributes<HTMLDivElement> & {
   labelText?: string;
   showAction?: boolean;
@@ -12,6 +10,16 @@ export type InputLabelProps = HTMLAttributes<HTMLDivElement> & {
 
 function ActionIconPlaceholder() {
   return <span className="ng-input-label__action-icon-placeholder" aria-hidden="true" />;
+}
+
+function TooltipIcon() {
+  return (
+    <svg className="ng-input-label__tooltip-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M4.16663 10H15.8333" stroke="#131313" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12.5 13.3333L15 10.8333" stroke="#131313" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12.5 6.66669L15 9.16669" stroke="#131313" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
 }
 
 export function InputLabel({
@@ -29,7 +37,7 @@ export function InputLabel({
         <span className="ng-input-label__text">{labelText}</span>
         {showTooltipIcon ? (
           <span className="ng-input-label__tooltip" aria-hidden="true">
-            <img src={figmaTooltipIcon} alt="" className="ng-input-label__tooltip-icon" />
+            <TooltipIcon />
           </span>
         ) : null}
       </div>

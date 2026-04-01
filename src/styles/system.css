@@ -24,6 +24,10 @@
   --ng-color-control-checkbox-selected: #b328ff;
   --ng-color-control-icon-default: var(--ng-color-text);
   --ng-color-control-icon-surface: rgba(255, 255, 255, 0.8);
+  --ng-color-chip-bg: #f2f6ff;
+  --ng-color-chip-fg: #131313;
+  --ng-color-chip-bg-selected: #4f2984;
+  --ng-color-chip-fg-selected: #ffffff;
 
   --ng-color-alert-danger-subtle-bg: #fde9e6;
   --ng-color-alert-danger-subtle-fg: #c31b02;
@@ -159,8 +163,8 @@
   --ng-size-bottom-nav-height: 66px;
   --ng-size-progress-width: 217px;
   --ng-size-progress-height: 12px;
-  --ng-size-input-field-height: 50px;
-  --ng-size-input-field-radius: 1000px;
+  --ng-size-input-field-height: 48px;
+  --ng-size-input-field-radius: 16px;
   --ng-size-knowledge-card-width: 152px;
   --ng-size-knowledge-card-height: 258px;
 
@@ -485,6 +489,93 @@
   color: var(--ng-color-tag-blue-vibrant-fg);
 }
 
+.ng-chip {
+  align-items: center;
+  background: var(--ng-color-chip-bg);
+  border: 0;
+  border-radius: 999px;
+  color: var(--ng-color-chip-fg);
+  cursor: pointer;
+  display: inline-flex;
+  gap: var(--ng-space-2);
+  justify-content: center;
+  padding: 6px 12px;
+}
+
+.ng-chip--selected {
+  background: var(--ng-color-chip-bg-selected);
+  color: var(--ng-color-chip-fg-selected);
+}
+
+.ng-chip__label {
+  font-family: var(--ng-font-family-default);
+  font-size: var(--ng-font-size-body-2);
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: var(--ng-line-height-body-2);
+  white-space: nowrap;
+}
+
+.ng-chip__icon {
+  align-items: center;
+  color: currentColor;
+  display: inline-flex;
+  height: 20px;
+  justify-content: center;
+  overflow: clip;
+  width: 20px;
+}
+
+.ng-chip__icon-art {
+  display: block;
+  height: 20px;
+  overflow: clip;
+  position: relative;
+  width: 20px;
+}
+
+.ng-chip__icon-layer {
+  position: absolute;
+}
+
+.ng-chip__icon-layer--left-wrap {
+  inset: 29.17% 16.67% 29.17% 20.83%;
+}
+
+.ng-chip__icon-layer--right-wrap {
+  inset: 16.62% 12.52% 16.67% 12.45%;
+}
+
+.ng-chip__icon-overflow {
+  display: block;
+  position: absolute;
+}
+
+.ng-chip__icon-overflow--left {
+  inset: -7.5% -5%;
+}
+
+.ng-chip__icon-overflow--right {
+  inset: -4.68% -4.16%;
+}
+
+.ng-chip__icon-svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.ng-chip:focus-visible {
+  outline: none;
+  box-shadow: var(--ng-focus-ring);
+}
+
+.ng-chip:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .ng-tag--subtle.ng-tag--turquoise,
 .ng-tag--subtle.ng-tag--pink,
 .ng-tag--subtle.ng-tag--orchid,
@@ -540,6 +631,7 @@
   align-items: center;
   border: 1px solid var(--ng-color-radio-border);
   border-radius: 999px;
+  box-sizing: border-box;
   display: inline-flex;
   height: 20px;
   justify-content: center;
@@ -610,7 +702,6 @@
   display: flex;
   justify-content: space-between;
   min-height: 20px;
-  padding: 0 var(--ng-space-4);
   width: 100%;
 }
 
@@ -623,10 +714,10 @@
 
 .ng-input-label__text {
   color: var(--ng-color-text);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: var(--ng-font-size-label-1);
+  font-weight: 500;
   letter-spacing: 0;
-  line-height: 20px;
+  line-height: var(--ng-line-height-label-1);
   white-space: nowrap;
 }
 
@@ -679,7 +770,6 @@
   color: var(--ng-color-text-secondary);
   display: inline-flex;
   gap: var(--ng-space-2);
-  padding: 0 var(--ng-space-4);
   width: 100%;
 }
 
@@ -1610,6 +1700,7 @@
 
 .ng-icon-button__icon {
   align-items: center;
+  color: var(--ng-color-control-icon-default);
   display: inline-flex;
   height: var(--ng-size-icon-default);
   justify-content: center;
@@ -1633,6 +1724,61 @@
 .ng-icon-button--compact .ng-icon-button__icon {
   height: var(--ng-size-icon-compact);
   width: var(--ng-size-icon-compact);
+}
+
+.ng-icon-button__default-icon-art {
+  display: block;
+  height: 24px;
+  overflow: clip;
+  position: relative;
+  width: 24px;
+}
+
+.ng-icon-button__default-icon-layer {
+  position: absolute;
+}
+
+.ng-icon-button__default-icon-layer--outline-wrap {
+  inset: 20.83% 12.5%;
+}
+
+.ng-icon-button__default-icon-layer--stripe-wrap {
+  inset: 41.67% 12.5% 58.33% 12.5%;
+}
+
+.ng-icon-button__default-icon-layer--dot-wrap {
+  inset: 62.5% 70.79% 37.5% 29.17%;
+}
+
+.ng-icon-button__default-icon-layer--short-wrap {
+  inset: 62.5% 45.83% 37.5% 45.83%;
+}
+
+.ng-icon-button__default-icon-overflow {
+  display: block;
+  position: absolute;
+}
+
+.ng-icon-button__default-icon-overflow--outline {
+  inset: -5.36% -4.17%;
+}
+
+.ng-icon-button__default-icon-overflow--stripe {
+  inset: -0.75px -4.17%;
+}
+
+.ng-icon-button__default-icon-overflow--dot {
+  inset: -0.75px -7499.83%;
+}
+
+.ng-icon-button__default-icon-overflow--short {
+  inset: -0.75px -37.5%;
+}
+
+.ng-icon-button__default-icon-svg {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .ng-icon-button__placeholder {
@@ -1669,21 +1815,16 @@
 }
 
 .ng-tile-button-group__tile {
-  align-items: center;
+  align-items: stretch;
   background: var(--ng-color-primary-soft);
   border: 0;
   border-radius: var(--ng-border-radius-lg);
-  color: var(--ng-color-primary);
+  color: inherit;
   cursor: pointer;
-  display: inline-flex;
-  font-family: var(--ng-font-family-default);
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
+  display: flex;
   justify-content: center;
-  letter-spacing: 0;
-  line-height: 20px;
   min-height: 64px;
+  padding: 0;
   width: 100%;
 }
 
@@ -1702,6 +1843,68 @@
   cursor: not-allowed;
 }
 
+.ng-tile-button-group__layer {
+  align-items: center;
+  border-radius: var(--ng-border-radius-lg);
+  display: inline-flex;
+  flex: 1 0 0;
+  flex-direction: column;
+  gap: var(--ng-space-1);
+  justify-content: center;
+  min-height: 0;
+  min-width: 0;
+  padding: var(--ng-space-3) var(--ng-space-4);
+}
+
+.ng-tile-button-group__icon {
+  align-items: center;
+  color: var(--ng-color-primary);
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
+  width: 24px;
+}
+
+.ng-tile-button-group__icon-art {
+  display: block;
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.ng-tile-button-group__icon-layer {
+  display: block;
+  position: absolute;
+}
+
+.ng-tile-button-group__icon-layer--top {
+  inset: 20.83% 8.33% 37.5% 8.33%;
+}
+
+.ng-tile-button-group__icon-layer--bottom {
+  bottom: 20.83%;
+  left: 25%;
+  right: 25%;
+  top: 44.17%;
+}
+
+.ng-tile-button-group__label {
+  color: var(--ng-color-primary);
+  font-family: var(--ng-font-family-default);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.ng-tile-button-group__tile:disabled .ng-tile-button-group__icon,
+.ng-tile-button-group__tile:disabled .ng-tile-button-group__label {
+  color: #919191;
+}
+
 .ng-alert {
   align-items: center;
   border-radius: var(--ng-border-radius-lg);
@@ -1712,11 +1915,50 @@
 }
 
 .ng-alert__icon {
-  background: currentColor;
-  display: inline-block;
+  display: inline-flex;
   flex-shrink: 0;
   height: var(--ng-size-alert-icon);
+  overflow: clip;
   width: var(--ng-size-alert-icon);
+}
+
+.ng-alert__status-icon {
+  color: currentColor;
+  display: block;
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.ng-alert__status-layer {
+  position: absolute;
+}
+
+.ng-alert__status-layer--ring-wrap {
+  inset: 12.5%;
+}
+
+.ng-alert__status-layer--check-wrap {
+  inset: 41.67% 37.5%;
+}
+
+.ng-alert__status-overflow {
+  display: block;
+  position: absolute;
+}
+
+.ng-alert__status-overflow--ring {
+  inset: -4.17%;
+}
+
+.ng-alert__status-overflow--check {
+  inset: -18.75% -12.5%;
+}
+
+.ng-alert__status-svg {
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .ng-alert__text {
@@ -1868,10 +2110,10 @@
   border-radius: 999px;
   cursor: pointer;
   display: inline-flex;
-  height: 34px;
+  height: 32px;
   justify-content: center;
   position: relative;
-  width: 34px;
+  width: 32px;
 }
 
 .ng-topbar__badge {
@@ -1966,6 +2208,156 @@
   width: 24px;
 }
 
+.ng-topbar__icon-art {
+  color: var(--ng-color-topbar-text);
+  display: block;
+  height: 24px;
+  overflow: clip;
+  position: relative;
+  width: 24px;
+}
+
+.ng-topbar__icon-art--dark {
+  color: #202124;
+}
+
+.ng-topbar__icon-layer {
+  position: absolute;
+}
+
+.ng-topbar__icon-layer--claims-main {
+  inset: 25% 29.17%;
+}
+
+.ng-topbar__icon-layer--ai-small {
+  inset: 12.5% 12.5% 54.17% 54.17%;
+}
+
+.ng-topbar__icon-layer--ai-large {
+  inset: 29.17% 29.17% 12.5% 12.5%;
+}
+
+.ng-topbar__icon-layer--notification-main {
+  inset: 12.5% 16.67% 29.17% 16.67%;
+}
+
+.ng-topbar__icon-layer--notification-clapper {
+  inset: 70.83% 37.5% 12.5%;
+}
+
+.ng-topbar__icon-layer--profile-head {
+  inset: 12.5% 33.33% 54.17% 33.33%;
+}
+
+.ng-topbar__icon-layer--profile-body {
+  inset: 62.5% 25% 12.5%;
+}
+
+.ng-topbar__icon-layer--card-outline {
+  inset: 20.83% 12.5%;
+}
+
+.ng-topbar__icon-layer--card-line {
+  inset: 41.67% 12.5% 58.33%;
+}
+
+.ng-topbar__icon-layer--card-dot {
+  inset: 62.5% 70.79% 37.5% 29.17%;
+}
+
+.ng-topbar__icon-layer--card-short-line {
+  inset: 62.5% 45.83% 37.5%;
+}
+
+.ng-topbar__icon-layer--learn-cap {
+  inset: 20.83% 8.33% 37.5%;
+}
+
+.ng-topbar__icon-layer--learn-base {
+  inset: 44.17% 25% 20.83%;
+}
+
+.ng-topbar__icon-layer--claims-stem {
+  inset: 12.5% 50%;
+}
+
+.ng-topbar__icon-layer--shop-bag {
+  inset: 33.33% 18.04% 12.5% 18.04%;
+}
+
+.ng-topbar__icon-layer--shop-handle {
+  inset: 12.5% 37.5% 54.17% 37.5%;
+}
+
+.ng-topbar__icon-overflow {
+  display: block;
+  position: absolute;
+}
+
+.ng-topbar__icon-overflow--claims-main {
+  inset: -6.25% -7.5%;
+}
+
+.ng-topbar__icon-overflow--ai-small {
+  inset: -9.38%;
+}
+
+.ng-topbar__icon-overflow--ai-large {
+  inset: -5.36%;
+}
+
+.ng-topbar__icon-overflow--notification-main {
+  inset: -5.36% -4.69%;
+}
+
+.ng-topbar__icon-overflow--notification-clapper {
+  inset: -18.75% -12.5%;
+}
+
+.ng-topbar__icon-overflow--profile-head {
+  inset: -9.38%;
+}
+
+.ng-topbar__icon-overflow--profile-body {
+  inset: -12.5% -6.25%;
+}
+
+.ng-topbar__icon-overflow--card-outline {
+  inset: -5.36% -4.17%;
+}
+
+.ng-topbar__icon-overflow--card-line {
+  inset: -0.75px -4.17%;
+}
+
+.ng-topbar__icon-overflow--card-dot {
+  inset: -0.75px -7499.83%;
+}
+
+.ng-topbar__icon-overflow--card-short-line {
+  inset: -0.75px -37.5%;
+}
+
+.ng-topbar__icon-overflow--learn-cap {
+  inset: -7.5% -3.75%;
+}
+
+.ng-topbar__icon-overflow--learn-base {
+  inset: -8.93% -6.25%;
+}
+
+.ng-topbar__icon-overflow--claims-stem {
+  inset: -4.17% -0.75px;
+}
+
+.ng-topbar__icon-overflow--shop-bag {
+  inset: -4.89% -5.77%;
+}
+
+.ng-topbar__icon-overflow--shop-handle {
+  inset: -9.38% -12.5%;
+}
+
 .ng-topbar__quicklink-label {
   font-size: 12px;
   font-weight: 400;
@@ -1987,8 +2379,8 @@
 }
 
 .ng-topbar__glyph {
-  height: 24px;
-  width: 24px;
+  height: 100%;
+  width: 100%;
 }
 
 .ng-topbar__glyph-layer {

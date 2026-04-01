@@ -1,6 +1,13 @@
 import type { ButtonHTMLAttributes } from "react";
 
-const figmaSelectedRadio = "http://localhost:3845/assets/5321446777ba0f3ef4f2e0e3f10b3fcfef64279a.svg";
+function SelectedRadioIcon() {
+  return (
+    <svg viewBox="0 0 20 20" className="ng-radio-button__selected" aria-hidden="true" fill="none">
+      <circle cx="10" cy="10" r="9.25" stroke="#131313" strokeWidth="1.5" />
+      <circle cx="10" cy="10" r="7" fill="#B328FF" />
+    </svg>
+  );
+}
 
 export type RadioButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onChange"> & {
   selected?: boolean;
@@ -37,9 +44,7 @@ export function RadioButton({
       {...props}
     >
       <span className="ng-radio-button__icon" aria-hidden="true">
-        {isSelected ? (
-          <img src={figmaSelectedRadio} alt="" className="ng-radio-button__selected" />
-        ) : null}
+        {isSelected ? <SelectedRadioIcon /> : null}
       </span>
     </button>
   );
