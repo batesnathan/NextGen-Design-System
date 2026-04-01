@@ -52,18 +52,28 @@ This checklist is for making the repository reliably usable by engineers and AI 
 
 ## Phase 4: Storybook AI Readiness (Execution Contract)
 
-- [ ] Create top-level Storybook doc page: `src/stories/00-AI_IMPLEMENTATION_CONTRACT.mdx`
-  - Define "AI-ready component" (state matrix coverage, visual acceptance criteria, Figma link format)
-  - List Figma MCP workflow steps
-  - Link to AGENTS.md and ICON_LIBRARY.md
-- [ ] Add state matrix stories for all atomic components:
-  - Button (variant × size × state combinations): 3 × 3 × 4 = 36 stories
-  - Input (filled/empty × focused/blurred × valid/invalid/error): 8 stories
-  - Badge (variant × size): 9 stories
-  - And similar for Card, Checkbox, Radio, TextButton, IconButton
-- [ ] Add acceptance notes to each component story (size/color/spacing tolerances, icon positioning)
-- [ ] Add Figma node ID references in story titles or descriptions
-- [ ] Run validation: `npm run build-storybook`
+- [x] Create top-level Storybook doc page: `src/stories/00-AI_IMPLEMENTATION_CONTRACT.mdx`
+  - Appears first in Storybook navigation
+  - Explains "AI-ready" definition
+  - Shows story template with AI-readable fields
+  - Links to all related documentation
+  - Includes implementation workflow
+  - FAQ for common AI agent questions
+- [x] Create detailed AI implementation contract: `docs/AI_IMPLEMENTATION_CONTRACT.md`
+  - Comprehensive guide for AI agents and engineers
+  - Workflow steps with code examples
+  - What AI should NOT do (prohibited shortcuts)
+  - Expectations for humans and AI
+  - Storybook as communication protocol
+  - Escalation procedures for edge cases
+- [ ] Add state matrix stories to atomic components (priority order):
+  - [ ] Button (3 variants × 3 sizes × 4 states = 36 stories)
+  - [ ] Input (varied focus/fill/error states = 8-12 stories)
+  - [ ] Badge (5 tones × 2 styles = 10 stories)
+  - [ ] Card, Checkbox, Radio, TextButton, IconButton (3+ stories each)
+- [ ] Add acceptance notes to each story (size/color/spacing tolerances)
+- [ ] Add Figma node ID references in story metadata
+- [ ] Run validation: `npm run build-storybook` ✓
 
 ## Phase 5: Operational Excellence (Sustainability)
 
