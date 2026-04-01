@@ -1,0 +1,9 @@
+# Default owners for the repository.
+* @batesnathan
+
+# Design system core ownership.
+/src/styles/system.css @batesnathan
+/src/components/icons/ @batesnathan
+/src/tokens/ @batesnathan
+/AGENTS.md @batesnathan
+/docs/ @batesnathan
