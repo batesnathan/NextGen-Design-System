@@ -12,31 +12,58 @@ This checklist is for making the repository reliably usable by engineers and AI 
   - `mcp_figma_get_screenshot` (final sanity check)
 - [x] Icon precision requirements are documented.
 
-## Phase 2: Reuse Architecture (Pilot)
+## Phase 2: Reuse Architecture (Icon Library Expansion)
 
 - [x] Shared icon library exists (`src/components/icons`).
 - [x] TopBar icons consume shared icon exports.
-- [ ] Migrate additional components to shared icon library.
-- [ ] Add icon naming conventions and deprecation notes for local one-off icons.
+- [ ] **BottomNav icons** → `src/components/icons/BottomNavIcons.tsx` (HomeIcon, AccountsIcon, InvestIcon, MarketplaceIcon, MoreIcon)
+- [ ] **Alert icon** → `src/components/icons/AlertIcons.tsx` (AlertStatusIcon)
+- [ ] **Radio icon** → `src/components/icons/RadioIcons.tsx` (SelectedRadioIcon)
+- [ ] **Chip icons** → `src/components/icons/ChipIcons.tsx` (ChipLeftIcon, ChipRightIcon)
+- [ ] Refactor BottomNav.tsx to consume shared icon exports
+- [ ] Refactor Alert.tsx to consume shared icon exports
+- [ ] Refactor RadioButton.tsx to consume shared icon exports
+- [ ] Refactor Chip.tsx to consume shared icon exports
+- [ ] Add icon naming conventions and registry in `docs/ICON_LIBRARY.md`
+- [ ] Run validation: `npm run check && npm run build-storybook`
 
-## Phase 3: Governance (Hard Checks)
+## Phase 3: Governance Gates (Visual Regression)
 
 - [x] CI quality gates for typecheck + Storybook build are enabled.
 - [x] PR template requires AI/design checklist + Figma Node IDs.
 - [x] PR policy gate validates node-id presence in PR body.
-- [ ] Add visual regression checks to CI for critical stories.
+- [ ] Add visual regression workflow to `.github/workflows/` (Playwright snapshots for icon-heavy stories)
+- [ ] Capture baseline snapshots for: TopBar (all sizes), BottomNav (active/inactive states), Alert (success/warning/error/info), Radio (selected/unselected), Chip (with/without icons)
+- [ ] Configure snapshot storage in CI (optional: use external artifact store or git-tracked `.playwright/`)
+- [ ] Run validation: `npm run check && npm run build-storybook`
 
-## Phase 4: Storybook AI Readiness
+## Phase 4: Storybook AI Readiness (Execution Contract)
 
-- [ ] For each component, include a full state matrix story.
-- [ ] Add acceptance notes in stories (size/color/spacing expectations).
-- [ ] Add top-level Storybook doc page describing the AI implementation contract.
+- [ ] Create top-level Storybook doc page: `src/stories/00-AI_IMPLEMENTATION_CONTRACT.mdx`
+  - Define "AI-ready component" (state matrix coverage, visual acceptance criteria, Figma link format)
+  - List Figma MCP workflow steps
+  - Link to AGENTS.md and ICON_LIBRARY.md
+- [ ] Add state matrix stories for all atomic components:
+  - Button (variant × size × state combinations): 3 × 3 × 4 = 36 stories
+  - Input (filled/empty × focused/blurred × valid/invalid/error): 8 stories
+  - Badge (variant × size): 9 stories
+  - And similar for Card, Checkbox, Radio, TextButton, IconButton
+- [ ] Add acceptance notes to each component story (size/color/spacing tolerances, icon positioning)
+- [ ] Add Figma node ID references in story titles or descriptions
+- [ ] Run validation: `npm run build-storybook`
 
-## Phase 5: Operational Excellence
+## Phase 5: Operational Excellence (Sustainability)
 
-- [ ] Add CODEOWNERS for design-system core paths.
-- [ ] Add semantic-release or changesets policy for predictable versioning.
-- [ ] Define rollback criteria for design regressions.
+- [ ] Create `.github/CODEOWNERS` file with design-system core ownership
+  - `src/styles/system.css` → design system maintainers
+  - `src/components/icons/` → design system maintainers
+  - `src/tokens/` → design system maintainers
+  - `AGENTS.md` → design system maintainers
+  - `docs/` → design system maintainers
+- [ ] Define semantic versioning policy in docs: when to bump Major/Minor/Patch
+- [ ] Define rollback criteria for design regressions (visual, accessibility, performance)
+- [ ] Optional: Set up semantic-release or changesets for automated versioning
+- [ ] Run validation: all CI gates pass
 
 ## Execution Policy
 

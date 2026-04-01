@@ -1,13 +1,5 @@
 import type { ButtonHTMLAttributes } from "react";
-
-function SelectedRadioIcon() {
-  return (
-    <svg viewBox="0 0 20 20" className="ng-radio-button__selected" aria-hidden="true" fill="none">
-      <circle cx="10" cy="10" r="9.25" stroke="#131313" strokeWidth="1.5" />
-      <circle cx="10" cy="10" r="7" fill="#B328FF" />
-    </svg>
-  );
-}
+import { SelectedRadioIcon } from "./icons";
 
 export type RadioButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "onChange"> & {
   selected?: boolean;
