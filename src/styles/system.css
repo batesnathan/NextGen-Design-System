@@ -310,6 +310,16 @@
   color: #ffffff;
 }
 
+.ng-button--danger-primary {
+  background: #c31b02;
+  color: #ffffff;
+}
+
+.ng-button--danger-secondary {
+  background: #fde9e6;
+  color: #c31b02;
+}
+
 .ng-button:disabled {
   cursor: not-allowed;
   filter: none;
@@ -323,7 +333,9 @@
 }
 
 .ng-button--secondary:disabled,
-.ng-button--tertiary:disabled {
+.ng-button--tertiary:disabled,
+.ng-button--danger-primary:disabled,
+.ng-button--danger-secondary:disabled {
   background: #e5e5e5;
   color: #919191;
 }
@@ -1587,12 +1599,11 @@
   width: var(--ng-size-icon-button-default);
 }
 
-.ng-icon-button--surface {
+.ng-icon-button--filled {
   background: var(--ng-color-control-icon-surface);
 }
 
-.ng-icon-button--compact {
-  border-radius: 0;
+.ng-icon-button--small {
   height: var(--ng-size-icon-button-compact);
   width: var(--ng-size-icon-button-compact);
 }
@@ -1603,6 +1614,20 @@
   height: var(--ng-size-icon-default);
   justify-content: center;
   width: var(--ng-size-icon-default);
+}
+
+.ng-icon-button--small .ng-icon-button__icon {
+  height: var(--ng-size-icon-compact);
+  width: var(--ng-size-icon-compact);
+}
+
+.ng-icon-button--surface {
+  background: var(--ng-color-control-icon-surface);
+}
+
+.ng-icon-button--compact {
+  height: var(--ng-size-icon-button-compact);
+  width: var(--ng-size-icon-button-compact);
 }
 
 .ng-icon-button--compact .ng-icon-button__icon {
@@ -1625,6 +1650,56 @@
 .ng-icon-button:disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+.ng-tile-button-group {
+  display: grid;
+  row-gap: 20px;
+  width: 340px;
+}
+
+.ng-tile-button-group--columns-2 {
+  column-gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ng-tile-button-group--columns-3 {
+  column-gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ng-tile-button-group__tile {
+  align-items: center;
+  background: var(--ng-color-primary-soft);
+  border: 0;
+  border-radius: var(--ng-border-radius-lg);
+  color: var(--ng-color-primary);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--ng-font-family-default);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  min-height: 64px;
+  width: 100%;
+}
+
+.ng-tile-button-group--columns-3 .ng-tile-button-group__tile {
+  min-height: 66px;
+}
+
+.ng-tile-button-group__tile:focus-visible {
+  box-shadow: var(--ng-focus-ring);
+  outline: none;
+}
+
+.ng-tile-button-group__tile:disabled {
+  background: #e5e5e5;
+  color: #919191;
+  cursor: not-allowed;
 }
 
 .ng-alert {

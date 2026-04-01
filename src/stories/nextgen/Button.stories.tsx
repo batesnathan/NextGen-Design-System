@@ -45,10 +45,29 @@ export const AI: Story = {
   }
 };
 
+export const DangerPrimary: Story = {
+  args: {
+    variant: "dangerPrimary"
+  }
+};
+
+export const DangerSecondary: Story = {
+  args: {
+    variant: "dangerSecondary"
+  }
+};
+
 export const FigmaMatrix: Story = {
   render: () => {
     const sizes = ["default", "large", "small"] as const;
-    const variants = ["primary", "secondary", "tertiary", "ai"] as const;
+    const variants = [
+      "primary",
+      "secondary",
+      "tertiary",
+      "ai",
+      "dangerPrimary",
+      "dangerSecondary",
+    ] as const;
 
     return (
       <div style={{ display: "grid", gap: 14 }}>
@@ -61,6 +80,8 @@ export const FigmaMatrix: Story = {
             ))}
           </div>
         ))}
+
+        <div style={{ height: 1, background: "#c2c2c2", margin: "4px 0" }} />
 
         {variants.map((variant) => (
           <div key={`${variant}-disabled`} style={{ display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>

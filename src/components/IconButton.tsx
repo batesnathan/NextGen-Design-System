@@ -1,9 +1,13 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 
-type IconButtonVariant = "default" | "surface" | "compact";
+type IconButtonType = "default" | "filled";
+type IconButtonSize = "default" | "small";
+type LegacyIconButtonVariant = "default" | "surface" | "compact";
 
 export type IconButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children"> & {
-  variant?: IconButtonVariant;
+  tone?: IconButtonType;
+  size?: IconButtonSize;
+  variant?: LegacyIconButtonVariant;
   icon?: ReactNode;
 };
 
@@ -11,11 +15,23 @@ function PlaceholderIcon() {
   return <span className="ng-icon-button__placeholder" aria-hidden="true" />;
 }
 
-export function IconButton({ variant = "default", icon, className = "", ...props }: IconButtonProps) {
+export function IconButton({
+  tone = "default",
+  size = "default",
+  variant,
+  icon,
+  className = "",
+  ...props
+}: IconButtonProps) {
+  const resolvedType = variant === "surface" ? "filled" : tone;
+  const resolvedSize = variant === "compact" ? "small" : size;
+
   return (
     <button
       type="button"
-      className={`ng-reset ng-icon-button ng-icon-button--${variant} ${className}`.trim()}
+      className={
+        `ng-reset ng-icon-button ng-icon-button--${resolvedType} ng-icon-button--${resolvedSize} ${className}`.trim()
+      }
       {...props}
     >
       <span className="ng-icon-button__icon" aria-hidden="true">

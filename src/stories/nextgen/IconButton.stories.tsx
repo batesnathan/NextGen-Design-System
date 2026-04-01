@@ -20,31 +20,43 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    variant: "default",
+    tone: "default",
+    size: "default",
     "aria-label": "Default icon button"
   }
 };
 
-export const Surface: Story = {
+export const Filled: Story = {
   args: {
-    variant: "surface",
-    "aria-label": "Surface icon button"
+    tone: "filled",
+    size: "default",
+    "aria-label": "Filled icon button"
   }
 };
 
-export const Compact: Story = {
+export const Small: Story = {
   args: {
-    variant: "compact",
-    "aria-label": "Compact icon button"
+    tone: "default",
+    size: "small",
+    "aria-label": "Small default icon button"
+  }
+};
+
+export const SmallFilled: Story = {
+  args: {
+    tone: "filled",
+    size: "small",
+    "aria-label": "Small filled icon button"
   }
 };
 
 export const FigmaStack: Story = {
   render: () => (
     <div style={{ display: "grid", gap: 18, justifyItems: "center" }}>
-      <IconButton variant="default" aria-label="Default icon button" />
-      <IconButton variant="surface" aria-label="Surface icon button" />
-      <IconButton variant="compact" aria-label="Compact icon button" />
+      <IconButton tone="default" size="default" aria-label="Default icon button" />
+      <IconButton tone="filled" size="default" aria-label="Filled icon button" />
+      <IconButton tone="default" size="small" aria-label="Small default icon button" />
+      <IconButton tone="filled" size="small" aria-label="Small filled icon button" />
     </div>
   )
 };

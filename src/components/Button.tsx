@@ -1,6 +1,13 @@
 import type { ButtonHTMLAttributes, PropsWithChildren, ReactNode } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "tertiary" | "ai" | "ghost";
+type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "ai"
+  | "dangerPrimary"
+  | "dangerSecondary"
+  | "ghost";
 type ButtonSize = "default" | "large" | "small";
 
 export type ButtonProps = PropsWithChildren<
@@ -22,13 +29,21 @@ export function Button({
   style,
   ...props
 }: ButtonProps) {
-  const resolvedVariant = variant === "ghost" ? "tertiary" : variant;
+  const variantClass = {
+    primary: "primary",
+    secondary: "secondary",
+    tertiary: "tertiary",
+    ai: "ai",
+    dangerPrimary: "danger-primary",
+    dangerSecondary: "danger-secondary",
+    ghost: "tertiary",
+  }[variant];
 
   return (
     <button
       type="button"
       className={
-        `ng-reset ng-button ng-button--${resolvedVariant} ng-button--${size} ${className}`.trim()
+        `ng-reset ng-button ng-button--${variantClass} ng-button--${size} ${className}`.trim()
       }
       style={{
         fontFamily: 'Inter, "Segoe UI", "Helvetica Neue", Arial, sans-serif',

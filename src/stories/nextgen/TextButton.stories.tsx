@@ -68,6 +68,32 @@ export const FigmaMatrix: Story = {
           Button text
         </TextButton>
       </div>
+
+      <div style={{ height: 1, background: "#c2c2c2", margin: "4px 0" }} />
+
+      <div style={{ display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap" }}>
+        <TextButton tone="default" padding="default" disabled>
+          Button text
+        </TextButton>
+        <TextButton tone="subtle" padding="default" disabled>
+          Button text
+        </TextButton>
+        <TextButton tone="danger" padding="default" disabled>
+          Button text
+        </TextButton>
+      </div>
+
+      <div style={{ display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap" }}>
+        <TextButton tone="default" padding="none" disabled>
+          Button text
+        </TextButton>
+        <TextButton tone="subtle" padding="none" disabled>
+          Button text
+        </TextButton>
+        <TextButton tone="danger" padding="none" disabled>
+          Button text
+        </TextButton>
+      </div>
     </div>
   )
 };

@@ -22,5 +22,6 @@ export * from "./SupportingText";
 export * from "./Tag";
 export * from "./Text";
 export * from "./TextButton";
+export * from "./TileButtonGroup";
 export * from "./Toast";
 export * from "./TopBar";
