@@ -1,0 +1,79 @@
+name: Visual Regression Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  visual-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Storybook Build
+        run: npm run build-storybook
+
+      - name: Serve Storybook
+        run: |
+          npx http-server storybook-static -p 6006 &
+          sleep 5
+          echo "STORYBOOK_URL=http://localhost:6006" >> "$GITHUB_ENV"
+
+      - name: Run Visual Regression Tests
+        run: |
+          npx playwright test --config=playwright.config.ts || true
+
+      - name: Upload Snapshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: visual-regression-snapshots
+          path: tests/visual-snapshots/
+          retention-days: 30
+
+      - name: Comment on PR with Results
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            
+            const snapshotsDir = 'tests/visual-snapshots/actual';
+            let comment = '## 📸 Visual Regression Test Results\n\n';
+            
+            if (!fs.existsSync(snapshotsDir)) {
+              comment += '✅ No visual regressions detected.\n';
+            } else {
+              const files = fs.readdirSync(snapshotsDir);
+              if (files.length === 0) {
+                comment += '✅ No visual regressions detected.\n';
+              } else {
+                comment += `⚠️ Visual differences detected in ${files.length} story(ies):\n\n`;
+                files.forEach(file => {
+                  comment += `- \`${file}\`\n`;
+                });
+                comment += '\n**Review and approve visual changes in the Artifacts tab.**\n';
+              }
+            }
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });

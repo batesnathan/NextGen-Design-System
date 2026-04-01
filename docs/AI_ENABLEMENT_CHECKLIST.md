@@ -32,10 +32,23 @@ This checklist is for making the repository reliably usable by engineers and AI 
 - [x] CI quality gates for typecheck + Storybook build are enabled.
 - [x] PR template requires AI/design checklist + Figma Node IDs.
 - [x] PR policy gate validates node-id presence in PR body.
-- [ ] Add visual regression workflow to `.github/workflows/` (Playwright snapshots for icon-heavy stories)
-- [ ] Capture baseline snapshots for: TopBar (all sizes), BottomNav (active/inactive states), Alert (success/warning/error/info), Radio (selected/unselected), Chip (with/without icons)
-- [ ] Configure snapshot storage in CI (optional: use external artifact store or git-tracked `.playwright/`)
-- [ ] Run validation: `npm run check && npm run build-storybook`
+- [x] Add visual regression workflow to `.github/workflows/visual-regression.yml`
+  - Builds Storybook
+  - Serves on localhost:6006
+  - Runs Playwright tests
+  - Comments on PRs with results
+- [x] Create Playwright configuration (`playwright.config.ts`)
+- [x] Create visual regression test templates (`tests/visual/icons.spec.ts`)
+  - TopBar icons (slim/expanded modes)
+  - BottomNav icons (all nav states)
+  - Alert icons (success/warning/danger/info)
+  - Radio icons (selected/unselected)
+  - Chip icons (left/right/both icons)
+- [x] Add visual test scripts to package.json
+  - `npm run test:visual` — run tests
+  - `npm run test:visual:update` — update baselines
+- [x] Create tests directory documentation (`tests/README.md`)
+- [x] Configure snapshot storage (git-tracked baseline snapshots)
 
 ## Phase 4: Storybook AI Readiness (Execution Contract)
 

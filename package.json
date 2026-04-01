@@ -19,7 +19,9 @@
     "check": "tsc -p tsconfig.json --noEmit",
     "validate:design": "npm run check && npm run build-storybook",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test:visual": "playwright test",
+    "test:visual:update": "playwright test --update-snapshots"
   },
   "keywords": [
     "design-system",
