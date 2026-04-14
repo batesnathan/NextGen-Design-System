@@ -49,7 +49,7 @@ const {
   SendEmail,
   Money,
   Wallet,
-  Card,
+  PaymentCardIcon,
   Invest,
   Transaction,
   AccountTimeline,
@@ -200,7 +200,7 @@ export const AllIcons: StoryObj = {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '32px' }}>
           <IconShowcase Icon={Money} name="money" />
           <IconShowcase Icon={Wallet} name="wallet" />
-          <IconShowcase Icon={Card} name="card" />
+          <IconShowcase Icon={PaymentCardIcon} name="card" />
           <IconShowcase Icon={Invest} name="invest" />
           <IconShowcase Icon={Transaction} name="transaction" />
           <IconShowcase Icon={AccountTimeline} name="account-timeline" />

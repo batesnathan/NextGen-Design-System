@@ -1291,7 +1291,7 @@ export const Wallet = React.forwardRef<HTMLDivElement, IconProps>(
 
 Wallet.displayName = "Wallet";
 
-export const Card = React.forwardRef<HTMLDivElement, IconProps>(
+export const PaymentCardIcon = React.forwardRef<HTMLDivElement, IconProps>(
   ({ className, size = "24" }, ref) => (
     <div
       ref={ref}
@@ -1304,7 +1304,7 @@ export const Card = React.forwardRef<HTMLDivElement, IconProps>(
   )
 );
 
-Card.displayName = "Card";
+PaymentCardIcon.displayName = "PaymentCardIcon";
 
 export const Invest = React.forwardRef<HTMLDivElement, IconProps>(
   ({ className, size = "24" }, ref) => (
@@ -1941,7 +1941,7 @@ export const ICONS = {
   // Financial
   'money': Money,
   'wallet': Wallet,
-  'card': Card,
+  'card': PaymentCardIcon,
   'invest': Invest,
   'transaction': Transaction,
   'account-timeline': AccountTimeline,
@@ -2015,7 +2015,7 @@ export default {
   SendEmail,
   Money,
   Wallet,
-  Card,
+  PaymentCardIcon,
   Invest,
   Transaction,
   AccountTimeline,
