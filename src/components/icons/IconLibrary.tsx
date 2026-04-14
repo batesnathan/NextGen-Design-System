@@ -8,6 +8,10 @@ export interface IconProps {
   size?: IconSize;
 }
 
+const assetBaseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? `${import.meta.env.BASE_URL}assets/`
+  : `${import.meta.env.BASE_URL}/assets/`;
+
 /**
  * NextGen Design System Icon Library
  * 84+ exact SVG icons with multi-size variants
@@ -22,7 +26,7 @@ export interface IconProps {
 
 // Helper to get icon asset path
 const getIconUrl = (name: string, size: IconSize = "24"): string => {
-  return `/assets/${name}-${size}.svg`;
+  return `${assetBaseUrl}${name}-${size}.svg`;
 };
 
 // ============================================================================
@@ -60,7 +64,7 @@ export const ArrowBack = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="arrow-back"
       data-size={size}
     >
-      <img alt="arrow back" className="absolute block inset-0 max-w-none size-full" src={`/assets/arrow-back-${size}.svg`} loading="lazy" />
+      <img alt="arrow back" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}arrow-back-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -76,7 +80,7 @@ export const ArrowDown = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="arrow-down"
       data-size={size}
     >
-      <img alt="arrow down" className="absolute block inset-0 max-w-none size-full" src={`/assets/arrow-down-${size}.svg`} loading="lazy" />
+      <img alt="arrow down" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}arrow-down-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -92,7 +96,7 @@ export const ArrowUp = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="arrow-up"
       data-size={size}
     >
-      <img alt="arrow up" className="absolute block inset-0 max-w-none size-full" src={`/assets/arrow-up-${size}.svg`} loading="lazy" />
+      <img alt="arrow up" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}arrow-up-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -108,7 +112,7 @@ export const ChevronRight = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="chevron-right"
       data-size={size}
     >
-      <img alt="chevron right" className="absolute block inset-0 max-w-none size-full" src={`/assets/chevron-right-${size}.svg`} loading="lazy" />
+      <img alt="chevron right" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}chevron-right-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -124,7 +128,7 @@ export const ChevronLeft = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="chevron-left"
       data-size={size}
     >
-      <img alt="chevron left" className="absolute block inset-0 max-w-none size-full" src={`/assets/chevron-left-${size}.svg`} loading="lazy" />
+      <img alt="chevron left" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}chevron-left-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -140,7 +144,7 @@ export const ChevronDown = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="chevron-down"
       data-size={size}
     >
-      <img alt="chevron down" className="absolute block inset-0 max-w-none size-full" src={`/assets/chevron-down-${size}.svg`} loading="lazy" />
+      <img alt="chevron down" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}chevron-down-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -156,7 +160,7 @@ export const ChevronUp = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="chevron-up"
       data-size={size}
     >
-      <img alt="chevron up" className="absolute block inset-0 max-w-none size-full" src={`/assets/chevron-up-${size}.svg`} loading="lazy" />
+      <img alt="chevron up" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}chevron-up-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -175,7 +179,7 @@ export const Add = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="add"
       data-size={size}
     >
-      <img alt="add" className="absolute block inset-0 max-w-none size-full" src={`/assets/add-${size}.svg`} loading="lazy" />
+      <img alt="add" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}add-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -190,7 +194,7 @@ export const Remove = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="remove"
       data-size={size}
     >
-      <img alt="remove" className="absolute block inset-0 max-w-none size-full" src={`/assets/remove-${size}.svg`} loading="lazy" />
+      <img alt="remove" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}remove-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -205,7 +209,7 @@ export const Close = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="close"
       data-size={size}
     >
-      <img alt="close" className="absolute block inset-0 max-w-none size-full" src={`/assets/close-${size}.svg`} loading="lazy" />
+      <img alt="close" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}close-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -220,7 +224,7 @@ export const Check = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="check"
       data-size={size}
     >
-      <img alt="check" className="absolute block inset-0 max-w-none size-full" src={`/assets/check-${size}.svg`} loading="lazy" />
+      <img alt="check" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}check-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -245,7 +249,7 @@ export const Edit = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/edit-main-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}edit-main-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -256,7 +260,7 @@ export const Edit = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/edit-slash-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}edit-slash-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -287,7 +291,7 @@ export const Delete = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/trash-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}trash-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -298,7 +302,7 @@ export const Delete = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/trash-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}trash-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -309,7 +313,7 @@ export const Delete = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/trash-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}trash-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -320,7 +324,7 @@ export const Delete = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/trash-layer3-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}trash-layer3-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -331,7 +335,7 @@ export const Delete = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/trash-layer4-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}trash-layer4-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -363,7 +367,7 @@ export const Upload = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/upload-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}upload-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -387,7 +391,7 @@ export const Upload = React.forwardRef<HTMLDivElement, IconProps>(
                   alt=""
                   aria-hidden="true"
                   style={{ display: "block", width: "100%", height: "100%" }}
-                  src={`/assets/upload-layer2-${size}.svg`}
+                  src={`${assetBaseUrl}${assetBaseUrl}upload-layer2-${size}.svg`}
                   loading="lazy"
                 />
               </div>
@@ -421,7 +425,7 @@ export const Upload = React.forwardRef<HTMLDivElement, IconProps>(
                   alt=""
                   aria-hidden="true"
                   style={{ display: "block", width: "100%", height: "100%" }}
-                  src={`/assets/upload-layer3-${size}.svg`}
+                  src={`${assetBaseUrl}${assetBaseUrl}upload-layer3-${size}.svg`}
                   loading="lazy"
                 />
               </div>
@@ -453,7 +457,7 @@ export const Download = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/download-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}download-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -464,7 +468,7 @@ export const Download = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/download-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}download-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -483,7 +487,7 @@ export const Download = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/download-layer3-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}download-layer3-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -503,7 +507,7 @@ export const Search = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="search"
       data-size={size}
     >
-      <img alt="search" className="absolute block inset-0 max-w-none size-full" src={`/assets/search-${size}.svg`} loading="lazy" />
+      <img alt="search" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}search-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -522,7 +526,7 @@ export const Visibility2 = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="visibility"
       data-size={size}
     >
-      <img alt="visibility" className="absolute block inset-0 max-w-none size-full" src={`/assets/visibility-${size}.svg`} loading="lazy" />
+      <img alt="visibility" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}visibility-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -547,7 +551,7 @@ export const Home = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/home-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}home-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -558,7 +562,7 @@ export const Home = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/home-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}home-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -569,7 +573,7 @@ export const Home = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/home-layer3-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}home-layer3-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -599,7 +603,7 @@ export const Settings = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/settings-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}settings-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -610,7 +614,7 @@ export const Settings = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/settings-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}settings-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -641,7 +645,7 @@ export const Menu = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/menu-layer-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}menu-layer-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -652,7 +656,7 @@ export const Menu = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/menu-layer-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}menu-layer-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -663,7 +667,7 @@ export const Menu = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/menu-layer-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}menu-layer-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -693,7 +697,7 @@ export const More = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/more-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}more-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -704,7 +708,7 @@ export const More = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/more-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}more-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -715,7 +719,7 @@ export const More = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/more-layer3-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}more-layer3-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -735,7 +739,7 @@ export const Filter = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="filter"
       data-size={size}
     >
-      <img alt="filter" className="absolute block inset-0 max-w-none size-full" src={`/assets/filter-${size}.svg`} loading="lazy" />
+      <img alt="filter" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}filter-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -750,7 +754,7 @@ export const Sort = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="sort"
       data-size={size}
     >
-      <img alt="sort" className="absolute block inset-0 max-w-none size-full" src={`/assets/sort-${size}.svg`} loading="lazy" />
+      <img alt="sort" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}sort-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -775,7 +779,7 @@ export const Refresh = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/refresh-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}refresh-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -786,7 +790,7 @@ export const Refresh = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/refresh-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}refresh-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -816,7 +820,7 @@ export const Reload = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/reload-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}reload-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -827,7 +831,7 @@ export const Reload = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/reload-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}reload-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -851,7 +855,7 @@ export const Warning = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="warning"
       data-size={size}
     >
-      <img alt="warning" className="absolute block inset-0 max-w-none size-full" src={`/assets/warning-${size}.svg`} loading="lazy" />
+      <img alt="warning" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}warning-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -866,7 +870,7 @@ export const Error = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="error"
       data-size={size}
     >
-      <img alt="error" className="absolute block inset-0 max-w-none size-full" src={`/assets/error-${size}.svg`} loading="lazy" />
+      <img alt="error" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}error-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -894,7 +898,7 @@ export const Info = React.forwardRef<HTMLDivElement, IconProps>(
                   alt=""
                   aria-hidden="true"
                   style={{ display: "block", width: "100%", height: "100%" }}
-                  src={`/assets/info-${size}-layer1.svg`}
+                  src={`${assetBaseUrl}${assetBaseUrl}info-${size}-layer1.svg`}
                   loading="lazy"
                 />
               </div>
@@ -911,7 +915,7 @@ export const Info = React.forwardRef<HTMLDivElement, IconProps>(
                   alt=""
                   aria-hidden="true"
                   style={{ display: "block", width: "100%", height: "100%" }}
-                  src={`/assets/info-${size}-layer2.svg`}
+                  src={`${assetBaseUrl}${assetBaseUrl}info-${size}-layer2.svg`}
                   loading="lazy"
                 />
               </div>
@@ -922,7 +926,7 @@ export const Info = React.forwardRef<HTMLDivElement, IconProps>(
                   alt=""
                   aria-hidden="true"
                   style={{ display: "block", width: "100%", height: "100%" }}
-                  src={`/assets/info-${size}-layer3.svg`}
+                  src={`${assetBaseUrl}${assetBaseUrl}info-${size}-layer3.svg`}
                   loading="lazy"
                 />
               </div>
@@ -935,7 +939,7 @@ export const Info = React.forwardRef<HTMLDivElement, IconProps>(
                 alt=""
                 aria-hidden="true"
                 style={{ display: "block", width: "100%", height: "100%" }}
-                src={`/assets/info-${size}-layer1.svg`}
+                src={`${assetBaseUrl}${assetBaseUrl}info-${size}-layer1.svg`}
                 loading="lazy"
               />
             </div>
@@ -945,7 +949,7 @@ export const Info = React.forwardRef<HTMLDivElement, IconProps>(
                   alt=""
                   aria-hidden="true"
                   style={{ display: "block", width: "100%", height: "100%" }}
-                  src={`/assets/info-${size}-layer2.svg`}
+                  src={`${assetBaseUrl}${assetBaseUrl}info-${size}-layer2.svg`}
                   loading="lazy"
                 />
               </div>
@@ -964,7 +968,7 @@ export const Info = React.forwardRef<HTMLDivElement, IconProps>(
                   alt=""
                   aria-hidden="true"
                   style={{ display: "block", width: "100%", height: "100%" }}
-                  src={`/assets/info-${size}-layer3.svg`}
+                  src={`${assetBaseUrl}${assetBaseUrl}info-${size}-layer3.svg`}
                   loading="lazy"
                 />
               </div>
@@ -984,7 +988,7 @@ export const Info = React.forwardRef<HTMLDivElement, IconProps>(
                   alt=""
                   aria-hidden="true"
                   style={{ display: "block", width: "100%", height: "100%" }}
-                  src={`/assets/info-${size}-layer4.svg`}
+                  src={`${assetBaseUrl}${assetBaseUrl}info-${size}-layer4.svg`}
                   loading="lazy"
                 />
               </div>
@@ -1006,7 +1010,7 @@ export const Success = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="success"
       data-size={size}
     >
-      <img alt="success" className="absolute block inset-0 max-w-none size-full" src={`/assets/success-${size}.svg`} loading="lazy" />
+      <img alt="success" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}success-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1021,7 +1025,7 @@ export const Help = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="help"
       data-size={size}
     >
-      <img alt="help" className="absolute block inset-0 max-w-none size-full" src={`/assets/help-${size}.svg`} loading="lazy" />
+      <img alt="help" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}help-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1036,7 +1040,7 @@ export const Notifications = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="notifications"
       data-size={size}
     >
-      <img alt="notifications" className="absolute block inset-0 max-w-none size-full" src={`/assets/notifications-${size}.svg`} loading="lazy" />
+      <img alt="notifications" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}notifications-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1051,7 +1055,7 @@ export const Bell = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="bell"
       data-size={size}
     >
-      <img alt="bell" className="absolute block inset-0 max-w-none size-full" src={`/assets/bell-${size}.svg`} loading="lazy" />
+      <img alt="bell" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}bell-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1070,7 +1074,7 @@ export const User = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="user"
       data-size={size}
     >
-      <img alt="user" className="absolute block inset-0 max-w-none size-full" src={`/assets/user-${size}.svg`} loading="lazy" />
+      <img alt="user" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}user-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1085,7 +1089,7 @@ export const Profile = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="profile"
       data-size={size}
     >
-      <img alt="profile" className="absolute block inset-0 max-w-none size-full" src={`/assets/profile-${size}.svg`} loading="lazy" />
+      <img alt="profile" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}profile-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1100,7 +1104,7 @@ export const Accounts = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="accounts"
       data-size={size}
     >
-      <img alt="accounts" className="absolute block inset-0 max-w-none size-full" src={`/assets/accounts-${size}.svg`} loading="lazy" />
+      <img alt="accounts" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}accounts-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1115,7 +1119,7 @@ export const Logout = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="logout"
       data-size={size}
     >
-      <img alt="logout" className="absolute block inset-0 max-w-none size-full" src={`/assets/logout-${size}.svg`} loading="lazy" />
+      <img alt="logout" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}logout-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1130,7 +1134,7 @@ export const Login = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="login"
       data-size={size}
     >
-      <img alt="login" className="absolute block inset-0 max-w-none size-full" src={`/assets/login-${size}.svg`} loading="lazy" />
+      <img alt="login" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}login-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1149,7 +1153,7 @@ export const Mail = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="mail"
       data-size={size}
     >
-      <img alt="mail" className="absolute block inset-0 max-w-none size-full" src={`/assets/mail-${size}.svg`} loading="lazy" />
+      <img alt="mail" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}mail-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1174,7 +1178,7 @@ export const Chat = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/chat-layer-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}chat-layer-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1204,7 +1208,7 @@ export const Message = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/message-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}message-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1215,7 +1219,7 @@ export const Message = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/message-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}message-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1235,7 +1239,7 @@ export const Phone = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="phone"
       data-size={size}
     >
-      <img alt="phone" className="absolute block inset-0 max-w-none size-full" src={`/assets/phone-${size}.svg`} loading="lazy" />
+      <img alt="phone" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}phone-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1250,7 +1254,7 @@ export const SendEmail = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="send-email"
       data-size={size}
     >
-      <img alt="send email" className="absolute block inset-0 max-w-none size-full" src={`/assets/send-email-${size}.svg`} loading="lazy" />
+      <img alt="send email" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}send-email-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1269,7 +1273,7 @@ export const Money = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="money"
       data-size={size}
     >
-      <img alt="money" className="absolute block inset-0 max-w-none size-full" src={`/assets/money-${size}.svg`} loading="lazy" />
+      <img alt="money" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}money-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1284,7 +1288,7 @@ export const Wallet = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="wallet"
       data-size={size}
     >
-      <img alt="wallet" className="absolute block inset-0 max-w-none size-full" src={`/assets/wallet-${size}.svg`} loading="lazy" />
+      <img alt="wallet" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}wallet-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1299,7 +1303,7 @@ export const PaymentCardIcon = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="card"
       data-size={size}
     >
-      <img alt="card" className="absolute block inset-0 max-w-none size-full" src={`/assets/card-${size}.svg`} loading="lazy" />
+      <img alt="card" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}card-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1314,7 +1318,7 @@ export const Invest = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="invest"
       data-size={size}
     >
-      <img alt="invest" className="absolute block inset-0 max-w-none size-full" src={`/assets/invest-${size}.svg`} loading="lazy" />
+      <img alt="invest" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}invest-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1329,7 +1333,7 @@ export const Transaction = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="transaction"
       data-size={size}
     >
-      <img alt="transaction" className="absolute block inset-0 max-w-none size-full" src={`/assets/transaction-${size}.svg`} loading="lazy" />
+      <img alt="transaction" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}transaction-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1344,7 +1348,7 @@ export const AccountTimeline = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="account-timeline"
       data-size={size}
     >
-      <img alt="account timeline" className="absolute block inset-0 max-w-none size-full" src={`/assets/account-timeline-${size}.svg`} loading="lazy" />
+      <img alt="account timeline" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}account-timeline-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1363,7 +1367,7 @@ export const Document = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="document"
       data-size={size}
     >
-      <img alt="document" className="absolute block inset-0 max-w-none size-full" src={`/assets/document-${size}.svg`} loading="lazy" />
+      <img alt="document" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}document-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1378,7 +1382,7 @@ export const FileUpload = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="file-upload"
       data-size={size}
     >
-      <img alt="file upload" className="absolute block inset-0 max-w-none size-full" src={`/assets/file-upload-${size}.svg`} loading="lazy" />
+      <img alt="file upload" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}file-upload-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1393,7 +1397,7 @@ export const Share = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="share"
       data-size={size}
     >
-      <img alt="share" className="absolute block inset-0 max-w-none size-full" src={`/assets/share-${size}.svg`} loading="lazy" />
+      <img alt="share" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}share-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1408,7 +1412,7 @@ export const Print = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="print"
       data-size={size}
     >
-      <img alt="print" className="absolute block inset-0 max-w-none size-full" src={`/assets/print-${size}.svg`} loading="lazy" />
+      <img alt="print" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}print-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1443,7 +1447,7 @@ export const Save = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/save-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}save-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1455,7 +1459,7 @@ export const Save = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/save-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}save-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1467,7 +1471,7 @@ export const Save = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/save-layer3-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}save-layer3-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1487,7 +1491,7 @@ export const Favorite = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="favorite"
       data-size={size}
     >
-      <img alt="favorite" className="absolute block inset-0 max-w-none size-full" src={`/assets/favorite-${size}.svg`} loading="lazy" />
+      <img alt="favorite" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}favorite-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1502,7 +1506,7 @@ export const Star = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="star"
       data-size={size}
     >
-      <img alt="star" className="absolute block inset-0 max-w-none size-full" src={`/assets/star-${size}.svg`} loading="lazy" />
+      <img alt="star" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}star-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1537,7 +1541,7 @@ export const Clock = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/clock-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}clock-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1549,7 +1553,7 @@ export const Clock = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/clock-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}clock-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1561,7 +1565,7 @@ export const Clock = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/clock-layer3-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}clock-layer3-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1637,37 +1641,37 @@ export const Calendar = React.forwardRef<HTMLDivElement, IconProps>(
                 : { position: "absolute", top: "-4.69%", right: "-4.69%", bottom: "-4.69%", left: "-4.69%" }
             }
           >
-            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`/assets/calendar-layer1-${size}.svg`} loading="lazy" />
+            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`${assetBaseUrl}${assetBaseUrl}calendar-layer1-${size}.svg`} loading="lazy" />
           </div>
         </div>
 
         <div style={{ position: "absolute", top: "12.5%", right: "33.33%", bottom: "70.83%", left: "66.67%" }}>
           <div style={{ position: "absolute", ...pegInset }}>
-            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`/assets/calendar-layer2-${size}.svg`} loading="lazy" />
+            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`${assetBaseUrl}${assetBaseUrl}calendar-layer2-${size}.svg`} loading="lazy" />
           </div>
         </div>
 
         <div style={{ position: "absolute", top: "12.5%", right: "66.67%", bottom: "70.83%", left: "33.33%" }}>
           <div style={{ position: "absolute", ...pegInset }}>
-            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`/assets/calendar-layer2-${size}.svg`} loading="lazy" />
+            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`${assetBaseUrl}${assetBaseUrl}calendar-layer2-${size}.svg`} loading="lazy" />
           </div>
         </div>
 
         <div style={{ position: "absolute", top: "45.83%", right: "16.67%", bottom: "54.17%", left: "16.67%" }}>
           <div style={{ position: "absolute", ...barInset }}>
-            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`/assets/calendar-layer3-${size}.svg`} loading="lazy" />
+            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`${assetBaseUrl}${assetBaseUrl}calendar-layer3-${size}.svg`} loading="lazy" />
           </div>
         </div>
 
         <div style={{ position: "absolute", top: "62.5%", right: "50%", bottom: "37.5%", left: "45.83%" }}>
           <div style={{ position: "absolute", ...mark1Inset }}>
-            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`/assets/calendar-layer4-${size}.svg`} loading="lazy" />
+            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`${assetBaseUrl}${assetBaseUrl}calendar-layer4-${size}.svg`} loading="lazy" />
           </div>
         </div>
 
         <div style={{ position: "absolute", top: "62.5%", right: "50%", bottom: "25%", left: "50%" }}>
           <div style={{ position: "absolute", ...mark2Inset }}>
-            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`/assets/calendar-layer5-${size}.svg`} loading="lazy" />
+            <img alt="" aria-hidden="true" style={{ display: "block", width: "100%", height: "100%" }} src={`${assetBaseUrl}${assetBaseUrl}calendar-layer5-${size}.svg`} loading="lazy" />
           </div>
         </div>
       </div>
@@ -1695,7 +1699,7 @@ export const Link = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/link-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}link-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1706,7 +1710,7 @@ export const Link = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/link-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}link-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1717,7 +1721,7 @@ export const Link = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/link-layer3-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}link-layer3-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1737,7 +1741,7 @@ export const Download2 = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="download"
       data-size={size}
     >
-      <img alt="download" className="absolute block inset-0 max-w-none size-full" src={`/assets/download-${size}.svg`} loading="lazy" />
+      <img alt="download" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}download-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1752,7 +1756,7 @@ export const Login2 = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="login"
       data-size={size}
     >
-      <img alt="login" className="absolute block inset-0 max-w-none size-full" src={`/assets/login-${size}.svg`} loading="lazy" />
+      <img alt="login" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}login-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1767,7 +1771,7 @@ export const Logout2 = React.forwardRef<HTMLDivElement, IconProps>(
       data-icon="logout"
       data-size={size}
     >
-      <img alt="logout" className="absolute block inset-0 max-w-none size-full" src={`/assets/logout-${size}.svg`} loading="lazy" />
+      <img alt="logout" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}${assetBaseUrl}logout-${size}.svg`} loading="lazy" />
     </div>
   )
 );
@@ -1793,7 +1797,7 @@ export const Lock = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/lock-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}lock-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1804,7 +1808,7 @@ export const Lock = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/lock-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}lock-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1815,7 +1819,7 @@ export const Lock = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/lock-layer3-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}lock-layer3-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1846,7 +1850,7 @@ export const Unlock = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/unlock-layer1-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}unlock-layer1-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1857,7 +1861,7 @@ export const Unlock = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/unlock-layer2-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}unlock-layer2-${size}.svg`}
               loading="lazy"
             />
           </div>
@@ -1868,7 +1872,7 @@ export const Unlock = React.forwardRef<HTMLDivElement, IconProps>(
               alt=""
               aria-hidden="true"
               style={{ display: "block", width: "100%", height: "100%" }}
-              src={`/assets/unlock-layer3-${size}.svg`}
+              src={`${assetBaseUrl}${assetBaseUrl}unlock-layer3-${size}.svg`}
               loading="lazy"
             />
           </div>
