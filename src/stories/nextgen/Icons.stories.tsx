@@ -15,10 +15,9 @@ const {
   ChevronUp,
   Add,
   Remove,
-  Close,
   Check,
   Edit,
-  Delete,
+  Trash,
   Upload,
   Download,
   Search,
@@ -31,34 +30,31 @@ const {
   Refresh,
   Reload,
   Warning,
-  Error,
   Info,
-  Success,
   Help,
   Notifications,
-  Bell,
   User,
-  Profile,
   Accounts,
-  Logout,
-  Login,
   Mail,
   Chat,
-  Message,
   Phone,
-  SendEmail,
   Money,
-  Wallet,
   PaymentCardIcon,
   Invest,
-  Transaction,
   AccountTimeline,
   Document,
-  FileUpload,
-  Share,
-  Print,
+  MedicalReport,
+  Stroller,
+  Parking,
+  Tooth,
+  Train,
+  UserAlt,
+  Ai,
+  Pill,
+  Receipt,
+  ExternalLink,
+  Duplicate,
   Save,
-  Favorite,
   Star,
   Clock,
   Calendar,
@@ -107,11 +103,14 @@ const IconShowcase = ({
 export const AllIcons: StoryObj = {
   render: () => (
     <div style={{ padding: '32px', backgroundColor: '#f5f5f5', overflowY: 'auto', maxHeight: '100vh' }}>
-      <h1 style={{ marginBottom: '32px' }}>84 NextGen Icons Library</h1>
+      <h1 style={{ marginBottom: '12px' }}>Supported Figma Icon Library</h1>
+      <p style={{ marginTop: 0, marginBottom: '32px', color: '#666', maxWidth: '880px' }}>
+        This gallery only shows icons that are both present in the design system and included in the provided Figma icon set.
+      </p>
       
       {/* Navigation & Direction */}
       <section style={{ marginBottom: '48px' }}>
-        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Navigation & Direction (8)</h2>
+        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Navigation & Direction</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '32px' }}>
           <IconShowcase Icon={ArrowForward} name="arrow-forward" />
           <IconShowcase Icon={ArrowBack} name="arrow-back" />
@@ -126,14 +125,13 @@ export const AllIcons: StoryObj = {
 
       {/* Action Icons */}
       <section style={{ marginBottom: '48px' }}>
-        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Action Icons (9+)</h2>
+        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Action Icons</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '32px' }}>
           <IconShowcase Icon={Add} name="add" />
           <IconShowcase Icon={Remove} name="remove" />
-          <IconShowcase Icon={Close} name="close" />
           <IconShowcase Icon={Check} name="check" />
           <IconShowcase Icon={Edit} name="edit" />
-          <IconShowcase Icon={Delete} name="trash (delete)" />
+          <IconShowcase Icon={Trash} name="trash" />
           <IconShowcase Icon={Upload} name="upload" />
           <IconShowcase Icon={Download} name="download" />
           <IconShowcase Icon={Search} name="search" />
@@ -142,7 +140,7 @@ export const AllIcons: StoryObj = {
 
       {/* View & Content */}
       <section style={{ marginBottom: '48px' }}>
-        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>View & Content (10)</h2>
+        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>View & Content</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '32px' }}>
           <IconShowcase Icon={Visibility} name="visibility" />
           <IconShowcase Icon={Home} name="home" />
@@ -158,71 +156,109 @@ export const AllIcons: StoryObj = {
 
       {/* Status & Alert */}
       <section style={{ marginBottom: '48px' }}>
-        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Status & Alert (7)</h2>
+        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Status & Alert</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '32px' }}>
           <IconShowcase Icon={Warning} name="warning" />
-          <IconShowcase Icon={Error} name="error" />
           <IconShowcase Icon={Info} name="info" />
-          <IconShowcase Icon={Success} name="success" />
           <IconShowcase Icon={Help} name="help" />
           <IconShowcase Icon={Notifications} name="notifications" />
-          <IconShowcase Icon={Bell} name="bell" />
         </div>
       </section>
 
       {/* User & Account */}
       <section style={{ marginBottom: '48px' }}>
-        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>User & Account (5)</h2>
+        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>User & Account</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '32px' }}>
           <IconShowcase Icon={User} name="user" />
-          <IconShowcase Icon={Profile} name="profile" />
+          <IconShowcase Icon={UserAlt} name="user-alt" />
           <IconShowcase Icon={Accounts} name="accounts" />
-          <IconShowcase Icon={Logout} name="logout" />
-          <IconShowcase Icon={Login} name="login" />
         </div>
       </section>
 
       {/* Communication */}
       <section style={{ marginBottom: '48px' }}>
-        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Communication (5)</h2>
+        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Communication</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '32px' }}>
           <IconShowcase Icon={Mail} name="mail" />
           <IconShowcase Icon={Chat} name="chat" />
-          <IconShowcase Icon={Message} name="message" />
           <IconShowcase Icon={Phone} name="phone" />
-          <IconShowcase Icon={SendEmail} name="send-email" />
         </div>
       </section>
 
       {/* Financial */}
       <section style={{ marginBottom: '48px' }}>
-        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Financial (6)</h2>
+        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Financial</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '32px' }}>
           <IconShowcase Icon={Money} name="money" />
-          <IconShowcase Icon={Wallet} name="wallet" />
+          <IconShowcase Icon={Receipt} name="receipt" />
           <IconShowcase Icon={PaymentCardIcon} name="card" />
           <IconShowcase Icon={Invest} name="invest" />
-          <IconShowcase Icon={Transaction} name="transaction" />
           <IconShowcase Icon={AccountTimeline} name="account-timeline" />
         </div>
       </section>
 
       {/* Additional Icons */}
       <section style={{ marginBottom: '48px' }}>
-        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Additional (14+)</h2>
+        <h2 style={{ fontSize: '18px', marginBottom: '24px', color: '#333' }}>Additional</h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px', marginBottom: '32px' }}>
           <IconShowcase Icon={Document} name="document" />
-          <IconShowcase Icon={FileUpload} name="file-upload" />
-          <IconShowcase Icon={Share} name="share" />
-          <IconShowcase Icon={Print} name="print" />
+          <IconShowcase Icon={MedicalReport} name="medical-report" />
+          <IconShowcase Icon={Stroller} name="stroller" />
+          <IconShowcase Icon={Parking} name="parking" />
+          <IconShowcase Icon={Tooth} name="tooth" />
+          <IconShowcase Icon={Train} name="train" />
+          <IconShowcase Icon={Ai} name="ai" />
+          <IconShowcase Icon={Pill} name="pill" />
+          <IconShowcase Icon={ExternalLink} name="external-link" />
+          <IconShowcase Icon={Duplicate} name="duplicate" />
           <IconShowcase Icon={Save} name="save" />
-          <IconShowcase Icon={Favorite} name="favorite" />
           <IconShowcase Icon={Star} name="star" />
           <IconShowcase Icon={Clock} name="clock" />
           <IconShowcase Icon={Calendar} name="calendar" />
           <IconShowcase Icon={Link} name="link" />
           <IconShowcase Icon={Lock} name="lock" />
           <IconShowcase Icon={Unlock} name="unlock" />
+        </div>
+      </section>
+
+      <section style={{ marginBottom: '48px' }}>
+        <h2 style={{ fontSize: '18px', marginBottom: '16px', color: '#333' }}>Provided Figma Icons Not Yet In The Design System</h2>
+        <p style={{ marginTop: 0, marginBottom: '16px', color: '#666', maxWidth: '880px' }}>
+          These icons are in the provided Figma set but do not currently have a matching design-system component in this repository.
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', padding: '20px', backgroundColor: '#fff', borderRadius: '8px' }}>
+          {[
+            'camera',
+            'clear',
+            'learn',
+            'visibility-off',
+            'file',
+            'photo',
+            'invoice',
+            'headset',
+            'shield',
+            'messages',
+            'cancel',
+            'send',
+            'heart',
+            'flag',
+            'folder-open',
+            'report',
+            'rocket',
+            'microphone',
+            'shop',
+            'paperclip',
+            'done',
+            'scan',
+            'marketplace',
+            'list',
+            'grid',
+            'coin',
+          ].map((name) => (
+            <div key={name} style={{ color: '#444', fontSize: '14px', fontFamily: 'monospace' }}>
+              {name}
+            </div>
+          ))}
         </div>
       </section>
 
@@ -264,9 +300,9 @@ export const SizeVariants: StoryObj = {
               <ArrowForward size={size} />
               <Check size={size} />
               <Search size={size} />
-              <Bell size={size} />
+              <Notifications size={size} />
               <Star size={size} />
-              <Wallet size={size} />
+              <Money size={size} />
             </div>
           </div>
         ))}

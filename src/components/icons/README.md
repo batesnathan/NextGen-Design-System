@@ -1,8 +1,26 @@
 # NextGen Design System Icons Library
 
-## 84 Exact SVG Icons - Multi-Size Variants
+## 95 Exact SVG Icons - Multi-Size Variants
 
-This is the official icon library for the NextGen Design System. **All 84 icons are pixel-perfect reproductions** extracted directly from Figma designs with full fidelity.
+This is the official icon library for the NextGen Design System. **All 95 icons are pixel-perfect reproductions** extracted directly from Figma designs with full fidelity.
+
+## Figma Rules
+
+The icon library follows the sizing guidance from Figma node `493:9088`.
+
+- Use icons at the size they were crafted. A `24` icon should be rendered at `24px`, not resized to `32px` with CSS transforms.
+- Each size has its own stroke weight and trim area, so every supported size needs its own asset or geometry.
+- Trim areas are intentional. Icon edges should not touch the sides of the container even when the outer frame is `16`, `20`, `24`, `32`, or `48`.
+
+### Supported Size Rules
+
+| Size | Stroke |
+|------|--------|
+| `16` | `1` |
+| `20` | `1.25` |
+| `24` | `1.5` |
+| `32` | `2` |
+| `48` | `3` |
 
 ### Key Features
 
@@ -48,6 +66,8 @@ import { Search } from '@/components/icons';
 <Search size="48" />  // Extra Large
 ```
 
+Do not resize one size variant to mimic another. If the UI needs `32px`, use the `32` variant rather than scaling the `24` variant.
+
 ### Styling
 
 ```tsx
@@ -74,7 +94,7 @@ export function DynamicIcon({ name, size = "24" }) {
 
 ---
 
-## Icon Categories (84 Total)
+## Icon Categories (95 Total)
 
 ### Navigation & Direction Icons (8)
 - `ArrowForward` - Next, continue, rightward action
@@ -138,14 +158,25 @@ export function DynamicIcon({ name, size = "24" }) {
 
 ### Financial Icons (6)
 - `Money` - Dollar, monetary, currency
+- `Receipt` - Receipt, monetary document, dollar
 - `Wallet` - Payment method, funds
 - `Card` - Credit card, payment card
 - `Invest` - Chart, investment, upward trend
 - `Transaction` - Exchange, transfer
 - `AccountTimeline` - History timeline, activity
 
-### Additional Icons (~22)
+### Additional Icons (~29)
 - `Document` - File, page, document
+- `MedicalReport` - Medical report, health record, clipboard
+- `Stroller` - Stroller, pram, dependent care
+- `Parking` - Parking, commuter, parking lot
+- `Tooth` - Tooth, teeth, dentist, dental
+- `Train` - Train, transit, subway, commuter rail
+- `UserAlt` - Alternate user, person
+- `Ai` - AI, sparkles, magic
+- `Pill` - Pill, capsule, medicine
+- `ExternalLink` - External link, share, export
+- `Duplicate` - Duplicate, copy
 - `FileUpload` - Document upload
 - `Share` - Share, distribution
 - `Print` - Printer, print document
@@ -230,12 +261,15 @@ import { ArrowForward } from '@/components/icons';
 
 ## Asset Storage
 
-All icon SVG assets are sourced from:
-- **Host**: `http://localhost:3845/assets/`
+Checked-in icon SVG assets live in `public/assets/` and are rendered by the component library.
+
 - **Pattern**: `{icon-name}-{size}.svg`
 - **Example**: `home-24.svg`, `arrow-back-48.svg`
+- **Authoring source**: Figma design context and exported geometry
 
 Icons automatically select the correct size variant based on the `size` prop.
+
+When adding or repairing an icon, preserve the Figma trim area and stroke for that exact size instead of stretching a different source asset.
 
 ---
 

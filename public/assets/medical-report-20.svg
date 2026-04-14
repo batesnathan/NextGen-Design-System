@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20" fill="none">
+  <g transform="translate(3.54167 3.54167)">
+    <path d="M3.95833 0.625H2.29167C1.84964 0.625 1.42572 0.800595 1.11316 1.11316C0.800595 1.42572 0.625 1.84964 0.625 2.29167V12.2917C0.625 12.7337 0.800595 13.1576 1.11316 13.4702C1.42572 13.7827 1.84964 13.9583 2.29167 13.9583H10.625C11.067 13.9583 11.491 13.7827 11.8035 13.4702C12.1161 13.1576 12.2917 12.7337 12.2917 12.2917V2.29167C12.2917 1.84964 12.1161 1.42572 11.8035 1.11316C11.491 0.800595 11.067 0.625 10.625 0.625H8.95833" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(6.875 1.875)">
+    <path d="M0.625 2.29167C0.625 1.84964 0.800595 1.42572 1.11316 1.11316C1.42572 0.800595 1.84964 0.625 2.29167 0.625H3.95833C4.40036 0.625 4.82428 0.800595 5.13684 1.11316C5.4494 1.42572 5.625 1.84964 5.625 2.29167C5.625 2.73369 5.4494 3.15762 5.13684 3.47018C4.82428 3.78274 4.40036 3.95833 3.95833 3.95833H2.29167C1.84964 3.95833 1.42572 3.78274 1.11316 3.47018C0.800595 3.15762 0.625 2.73369 0.625 2.29167Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(7.70833 11.04167)">
+    <path d="M0.625 0.625H3.95833" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(9.375 9.375)">
+    <path d="M0.625 0.625V3.95833" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -14,7 +14,7 @@ const assetBaseUrl = import.meta.env.BASE_URL.endsWith('/')
 
 /**
  * NextGen Design System Icon Library
- * 84+ exact SVG icons with multi-size variants
+ * 95+ exact SVG icons with multi-size variants
  * 
  * USAGE:
  * import { ArrowForward, Home, Visibility } from '@/components/icons';
@@ -1374,6 +1374,171 @@ export const Document = React.forwardRef<HTMLDivElement, IconProps>(
 
 Document.displayName = "Document";
 
+export const MedicalReport = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="medical-report"
+      data-size={size}
+    >
+      <img alt="medical report" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}medical-report-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+MedicalReport.displayName = "MedicalReport";
+
+export const Stroller = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="stroller"
+      data-size={size}
+    >
+      <img alt="stroller" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}stroller-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+Stroller.displayName = "Stroller";
+
+export const Parking = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="parking"
+      data-size={size}
+    >
+      <img alt="parking" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}parking-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+Parking.displayName = "Parking";
+
+export const Tooth = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="tooth"
+      data-size={size}
+    >
+      <img alt="tooth" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}tooth-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+Tooth.displayName = "Tooth";
+
+export const Train = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="train"
+      data-size={size}
+    >
+      <img alt="train" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}train-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+Train.displayName = "Train";
+
+export const UserAlt = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="user-alt"
+      data-size={size}
+    >
+      <img alt="user alt" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}user-alt-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+UserAlt.displayName = "UserAlt";
+
+export const Ai = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="ai"
+      data-size={size}
+    >
+      <img alt="ai" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}ai-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+Ai.displayName = "Ai";
+
+export const Pill = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="pill"
+      data-size={size}
+    >
+      <img alt="pill" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}pill-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+Pill.displayName = "Pill";
+
+export const Receipt = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="receipt"
+      data-size={size}
+    >
+      <img alt="receipt" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}receipt-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+Receipt.displayName = "Receipt";
+
+export const ExternalLink = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="external-link"
+      data-size={size}
+    >
+      <img alt="external link" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}external-link-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+ExternalLink.displayName = "ExternalLink";
+
+export const Duplicate = React.forwardRef<HTMLDivElement, IconProps>(
+  ({ className, size = "24" }, ref) => (
+    <div
+      ref={ref}
+      className={className || `overflow-clip relative ${size === "48" ? "size-[48px]" : size === "32" ? "size-[32px]" : size === "20" ? "size-[20px]" : size === "16" ? "size-[16px]" : "size-[24px]"}`}
+      data-icon="duplicate"
+      data-size={size}
+    >
+      <img alt="duplicate" className="absolute block inset-0 max-w-none size-full" src={`${assetBaseUrl}duplicate-${size}.svg`} loading="lazy" />
+    </div>
+  )
+);
+
+Duplicate.displayName = "Duplicate";
+
 export const FileUpload = React.forwardRef<HTMLDivElement, IconProps>(
   ({ className, size = "24" }, ref) => (
     <div
@@ -1952,6 +2117,17 @@ export const ICONS = {
   
   // Additional
   'document': Document,
+  'medical-report': MedicalReport,
+  'stroller': Stroller,
+  'parking': Parking,
+  'tooth': Tooth,
+  'train': Train,
+  'user-alt': UserAlt,
+  'ai': Ai,
+  'pill': Pill,
+  'receipt': Receipt,
+  'external-link': ExternalLink,
+  'duplicate': Duplicate,
   'file-upload': FileUpload,
   'share': Share,
   'print': Print,
@@ -2024,6 +2200,17 @@ export default {
   Transaction,
   AccountTimeline,
   Document,
+  MedicalReport,
+  Stroller,
+  Parking,
+  Tooth,
+  Train,
+  UserAlt,
+  Ai,
+  Pill,
+  Receipt,
+  ExternalLink,
+  Duplicate,
   FileUpload,
   Share,
   Print,

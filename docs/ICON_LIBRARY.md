@@ -254,6 +254,22 @@ Before shipping or updating any icon:
 - [ ] **Build proof**: `npm run build-storybook` succeeds
 - [ ] **Visual sanity**: Compare rendered output with Figma screenshot
 
+## Figma Sizing Rules
+
+The canonical sizing rules come from Figma node `493:9088`.
+
+- Icons must be used at the size they were crafted and must not be resized to impersonate another supported size.
+- Each supported size has its own stroke weight.
+- Each supported size must preserve its trim area so the glyph does not collide with the container edges.
+
+| Size | Stroke | Rule |
+|------|--------|------|
+| `16` | `1` | Use the dedicated `16px` asset or geometry |
+| `20` | `1.25` | Use the dedicated `20px` asset or geometry |
+| `24` | `1.5` | Default size, do not stretch for larger contexts |
+| `32` | `2` | Use the dedicated `32px` asset or geometry |
+| `48` | `3` | Use the dedicated `48px` asset or geometry |
+
 ---
 
 ## Icon Generation Workflow
@@ -350,18 +366,32 @@ export function OldIcon(): ReactElement { ... }
 | Radio buttons | 20px | radio button |
 | Chip icons | varied | inline |
 
-### Scaling Icons
+### Scaling Policy
+
+Do not scale a smaller icon into a larger size with CSS transforms, width/height overrides, or parent `transform: scale(...)` wrappers. If the design needs a different size, add or use the matching crafted variant.
+
+Correct:
 
 ```typescript
-// Responsive container wrapper
-function Icon32({ icon: Icon }: { icon: () => ReactElement }) {
-  return (
-    <div style={{ width: 32, height: 32, transform: 'scale(1.33)' }}>
-      <Icon />
-    </div>
-  );
-}
+<Search size="32" />
 ```
+
+Incorrect:
+
+```typescript
+<div style={{ width: 32, height: 32, transform: 'scale(1.33)' }}>
+  <Search size="24" />
+</div>
+```
+
+### Trim Areas
+
+Trim areas are part of the icon design, not empty waste.
+
+- Preserve inset and overflow values from Figma design context.
+- Keep glyphs optically centered without touching container edges.
+- When working from asset files, prefer a full-size outer viewBox with the trim area baked into the SVG.
+- When working from layered wrappers, preserve the Figma percentages exactly enough to keep the same silhouette and padding.
 
 ---
 
